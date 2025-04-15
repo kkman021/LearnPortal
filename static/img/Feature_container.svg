@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <!-- 基礎設施層 -->
+  <rect x="60" y="220" width="180" height="25" fill="#455A64" rx="4" opacity="0.9"/>
+  <text x="105" y="237" fill="white" font-family="Arial" font-size="12">Infrastructure</text>
+  
+  <!-- 容器運行時層 -->
+  <rect x="60" y="185" width="180" height="25" fill="#0288D1" rx="4" opacity="0.9"/>
+  <text x="95" y="202" fill="white" font-family="Arial" font-size="12">Container Runtime</text>
+  
+  <!-- 容器組 1 -->
+  <g transform="translate(70,80)">
+    <!-- 容器組 -->
+    <rect width="70" height="90" fill="#E1F5FE" rx="6" opacity="0.9"/>
+    
+    <!-- 微服務容器 -->
+    <rect x="5" y="10" width="60" height="20" fill="#03A9F4" rx="4"/>
+    <rect x="5" y="35" width="60" height="20" fill="#03A9F4" rx="4"/>
+    <rect x="5" y="60" width="60" height="20" fill="#03A9F4" rx="4"/>
+  </g>
+  
+  <!-- 容器組 2 -->
+  <g transform="translate(160,80)">
+    <!-- 容器組 -->
+    <rect width="70" height="90" fill="#E8F5E9" rx="6" opacity="0.9"/>
+    
+    <!-- 微服務容器 -->
+    <rect x="5" y="10" width="60" height="20" fill="#4CAF50" rx="4"/>
+    <rect x="5" y="35" width="60" height="20" fill="#4CAF50" rx="4"/>
+    <rect x="5" y="60" width="60" height="20" fill="#4CAF50" rx="4"/>
+  </g>
+  
+  <!-- 跨容器通信 -->
+  <path d="M140,125 C150,125 150,125 160,125" 
+        stroke="#FF5722" 
+        stroke-width="2"
+        stroke-dasharray="4,4"/>
+  
+  <!-- 可擴展性指示 -->
+  <g transform="translate(240,115)">
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#FFC107" stroke-width="2"/>
+    <text x="-5" y="5" fill="#FFC107" font-family="Arial" font-size="16">+</text>
+  </g>
+  
+  <!-- 核心標籤 -->
+  <g transform="translate(70,40)">
+    <rect width="50" height="15" fill="#2196F3" rx="3" opacity="0.9"/>
+    <text x="7" y="11" fill="white" font-family="Arial" font-size="10">Portable</text>
+  </g>
+  
+  <g transform="translate(125,40)">
+    <rect width="50" height="15" fill="#4CAF50" rx="3" opacity="0.9"/>
+    <text x="7" y="11" fill="white" font-family="Arial" font-size="10">Scalable</text>
+  </g>
+  
+  <g transform="translate(180,40)">
+    <rect width="50" height="15" fill="#FF5722" rx="3" opacity="0.9"/>
+    <text x="7" y="11" fill="white" font-family="Arial" font-size="10">Isolated</text>
+  </g>
+</svg>

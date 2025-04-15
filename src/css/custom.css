@@ -1,0 +1,162 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #006eff;
+  --ifm-color-primary-dark: #0063e6;
+  --ifm-color-primary-darker: #005dd9;
+  --ifm-color-primary-darkest: #004db3;
+  --ifm-color-primary-light: #1a7cff;
+  --ifm-color-primary-lighter: #2684ff;
+  --ifm-color-primary-lightest: #4d99ff;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-navbar-link-color: #323233;
+  --ifm-font-weight-semibold: 400;
+  --ifm-navbar-link-hover-color: #006EFF;
+  --ifm-breadcrumb-color-active: #323233;
+  --ifm-fw-400: 400;
+  --ifm-fw-700: 700;
+
+  --ifm-color-gray-100: #fafafa;
+  --ifm-leading-desktop: 1;
+}
+
+.searchBar .dropdownMenu {
+  background-color: #fff;
+  border: 1px solid #eaecef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+:root {
+  /* 複寫變數 */
+  --ifm-font-family-base: Heebo, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --ifm-font-family-monospace: Heebo, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+.navbar__brand b {
+  font-weight: var(--ifm-fw-700);
+}
+
+.navbar__link {
+  font-weight: var(--ifm-fw-400);
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  font-weight: var(--ifm-fw-700);
+  background: none;
+}
+
+.breadcrumbs__link:any-link:hover,
+.breadcrumbs__link:link:hover,
+.breadcrumbs__link:visited:hover,
+area[href].breadcrumbs__link:hover {
+  background: none;
+}
+
+/* Hearo Banner 樣式開始 */
+.hero__title {
+  color: black;
+  line-height: 2.75rem;
+  font-weight: var(--ifm-fw-700);
+}
+
+.hero__subtitle {
+  color: black;
+  line-height: 1.5rem;
+  font-weight: var(--ifm-fw-400);
+}
+
+/* Hearo Banner 樣式結束 */
+
+/* Menu 效果開始 */
+
+.dropdown__link--active {
+  background-color: transparent;
+  --ifm-dropdown-link-color: none;
+}
+
+.dropdown__link:hover {
+  color: var(--ifm-color-primary);
+  border-left: 4px solid var(--ifm-color-primary);
+  padding-left: 8px;
+  /* Adjust padding to accommodate the border */
+  background-color: transparent;
+}
+
+.menu__list-item-collapsible:hover {
+  background-color: transparent;
+}
+
+.menu__link:hover,
+.menu__link--sublist:hover {
+  color: var(--ifm-color-primary);
+  border-left: 4px solid var(--ifm-color-primary);
+  padding-left: 8px;
+  /* Adjust padding to accommodate the border */
+  background-color: transparent;
+}
+
+.menu__link:not(.menu__link--sublist),
+.menu__link--active:not(.menu__link--sublist),
+.menu__list-item-collapsible--active {
+  background-color: transparent;
+}
+
+/* Menu 效果結束 */
+
+/* 把 .version-dropdown-item 都隱藏起來，有 active 的才顯示 */
+
+.navbar__item.version-dropdown-item {
+  display: none;
+}
+
+.navbar__item.version-dropdown-item.active {
+  display: block;
+}
+.navbar__link--active {
+  color:var(--ifm-navbar-link-color);
+}
+
+@media (max-width: 996px) {
+  .navbar__item.version-dropdown-item.active {
+    display: none;
+  }
+}
+
+.menu__list-item.version-dropdown-item {
+  display: none;
+}
+
+.menu__list-item.version-dropdown-item.active {
+  display: block;
+}
+
+
+.searchInput_YFbd {
+  background-color: rgb(250 250 250);
+  opacity: 1;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: .25rem;
+  border-color: rgb(200 200 200);
+}
+
+.searchInput_YFbd:focus {
+  outline: 1px solid var(--search-local-input-active-border-color, var(--ifm-color-primary)) !important;
+}
+
+.footer__title {
+  font: bold var(--ifm-h2-font-size) / var(--ifm-heading-line-height) var(--ifm-font-family-base);
+}
+
+.markdown table tr{
+  line-height: 90%;
+}
+
+.docusaurus-mt-lg {
+  margin-top: 1rem;
+}

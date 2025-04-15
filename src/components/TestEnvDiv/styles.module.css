@@ -1,0 +1,12 @@
+.testEnvDiv {
+  background-color: #ff6b6b;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -999;
+  font-weight: bold;
+}

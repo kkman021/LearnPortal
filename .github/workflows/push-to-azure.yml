@@ -1,0 +1,39 @@
+name: Push to Azure DevOps
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  push-to-azure-devops:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+
+      - name: Push to Azure DevOps
+        run: |
+          # 添加 Azure DevOps 遠端儲存庫
+          git remote add azure https://$(echo "${{ secrets.AZURE_PAT }}")@dev.azure.com/Advantech-EBO/Dev%20Guideline/_git/DeveloperPortal
+          
+          # 確保遠端被正確添加
+          echo "Remote repositories:"
+          git remote -v
+          
+          # 推送到 Azure DevOps (使用 -f 強制推送，如果需要的話)
+          # 如果不需要強制推送，請移除 -f 參數
+          git push azure master:master || {
+            echo "Failed to push to Azure DevOps. Trying with force push..."
+            git push azure master:master
+          }
+        env:
+          # 設定環境變數以避免在日誌中顯示 URL 中的認證
+          GIT_TRACE: 0

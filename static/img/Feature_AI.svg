@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" fill="none">
+  <!-- 背景網格 -->
+  <pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+    <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#E3F2FD" stroke-width="0.5" opacity="0.3"/>
+  </pattern>
+  <rect width="300" height="300" fill="url(#smallGrid)"/>
+  
+  <!-- 主要物件框 -->
+  <rect x="90" y="80" width="120" height="140" 
+        fill="none" 
+        stroke="#2196F3" 
+        stroke-width="2.5"
+        stroke-dasharray="8,4"/>
+        
+  <!-- 次要物件框 -->
+  <rect x="40" y="160" width="80" height="100" 
+        fill="none" 
+        stroke="#4CAF50" 
+        stroke-width="2"
+        stroke-dasharray="6,3"/>
+        
+  <!-- 物件標籤背景 -->
+  <rect x="90" y="60" width="70" height="20" fill="#2196F3" rx="4"/>
+  <rect x="40" y="140" width="60" height="20" fill="#4CAF50" rx="4"/>
+  
+  <!-- 物件標籤文字 -->
+  <text x="100" y="74" fill="white" font-family="Arial" font-size="12">Object 1</text>
+  <text x="45" y="154" fill="white" font-family="Arial" font-size="12">Object 2</text>
+  
+  <!-- 特徵點和連接線 -->
+  <circle cx="150" cy="150" r="3" fill="#FF5722"/>
+  <circle cx="180" cy="170" r="3" fill="#FF5722"/>
+  <circle cx="130" cy="190" r="3" fill="#FF5722"/>
+  <circle cx="160" cy="130" r="3" fill="#FF5722"/>
+  
+  <!-- 特徵點連接 -->
+  <line x1="150" y1="150" x2="180" y2="170" stroke="#FF5722" stroke-width="1" opacity="0.6"/>
+  <line x1="180" y1="170" x2="130" y2="190" stroke="#FF5722" stroke-width="1" opacity="0.6"/>
+  <line x1="130" y1="190" x2="160" y2="130" stroke="#FF5722" stroke-width="1" opacity="0.6"/>
+  <line x1="160" y1="130" x2="150" y2="150" stroke="#FF5722" stroke-width="1" opacity="0.6"/>
+  
+  <!-- 置信度指示器 -->
+  <rect x="90" y="85" width="50" height="6" rx="3" fill="#E3F2FD"/>
+  <rect x="90" y="85" width="45" height="6" rx="3" fill="#2196F3"/>
+  
+  <!-- 掃描線效果 -->
+  <line x1="0" y1="0" x2="300" y2="300" stroke="#64B5F6" stroke-width="1" opacity="0.3"/>
+  <line x1="300" y1="0" x2="0" y2="300" stroke="#64B5F6" stroke-width="1" opacity="0.3"/>
+  
+  <!-- 角點檢測標記 -->
+  <path d="M90,80 L110,80 M90,80 L90,100" stroke="#FFC107" stroke-width="2"/>
+  <path d="M210,80 L190,80 M210,80 L210,100" stroke="#FFC107" stroke-width="2"/>
+  <path d="M90,220 L110,220 M90,220 L90,200" stroke="#FFC107" stroke-width="2"/>
+  <path d="M210,220 L190,220 M210,220 L210,200" stroke="#FFC107" stroke-width="2"/>
+  
+  <!-- 物件分析數據 -->
+  <text x="220" y="100" fill="#2196F3" font-family="monospace" font-size="10">conf: 0.92</text>
+  <text x="220" y="115" fill="#2196F3" font-family="monospace" font-size="10">x: 150</text>
+  <text x="220" y="130" fill="#2196F3" font-family="monospace" font-size="10">y: 160</text>
+  
+  <!-- 動態分析效果 -->
+  <circle cx="150" cy="150" r="50" stroke="#2196F3" stroke-width="1" opacity="0.2"/>
+  <circle cx="150" cy="150" r="70" stroke="#2196F3" stroke-width="1" opacity="0.1"/>
+  
+  <!-- 特徵點標註 -->
+  <circle cx="160" cy="140" r="8" fill="none" stroke="#FF9800" stroke-width="1" opacity="0.6"/>
+  <circle cx="140" cy="160" r="8" fill="none" stroke="#FF9800" stroke-width="1" opacity="0.6"/>
+</svg>
