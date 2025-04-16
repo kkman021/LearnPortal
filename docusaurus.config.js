@@ -41,7 +41,7 @@ const generateOpenApiPlugins = () => {
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Advantech Learn Center",
-  tagline: "From Edge to Intelligence: Accelerating Development for Everyone",
+  tagline: "",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -140,76 +140,69 @@ const config = {
           },
         },
         navbar: {
-          title: 'Developer Portal　｜',
+          title: '｜ Learn',
           logo: {
-            alt: "Advantech Developer Portal",
+            alt: "Advantech Learn Center",
             src: "img/logo.svg",
           },
           items: [
             {
-              type: 'doc',
-              docId: 'Introduction',
-              docsPluginId: 'EdgeSync', 
-              label: "EdgeSync", 
-              position: "left",
-            },
-            {
-              type: 'dropdown',
-              label: 'Development Kit',
-              position: 'left',
-              to: '/EdgeSync/SDK/Architecture',
+              label: "Discover",
               items: [
                 {
                   type: 'doc',
-                  docId: 'SDK/Architecture',
-                  label: 'EdgeSync SDK',
-                  docsPluginId: 'EdgeSync',
+                  docId: 'Overview',
+                  docsPluginId: 'BSP', 
+                  label: "BSP & Yocto", 
                 },
                 {
-                  type: 'doc',
-                  docId: 'SDK/PeripheralAccess/GPIO',
-                  label: 'Peripheral Access',
-                  docsPluginId: 'EdgeSync',
+                  label: "Training",
+                  to: "https://wise-iot.advantech.com/zh-tw/marketplace/training",
                 },
+                {
+                  label: "Webinars",
+                  to: "https://wise-iot.advantech.com/zh-tw/marketplace/webinars",
+                }
+              ],
+            },
+            {
+              label: "Product Documentation",
+              items: [
+                {
+                  type: 'doc',
+                  docId: 'Introduction',
+                  docsPluginId: 'EdgeSync', 
+                  label: "EdgeSync", 
+                },
+                {
+                  label: "iEMS",
+                  to: "https://wise-iot.advantech.com/zh-tw/marketplace/solutions/iems-solutions",
+                },
+                {
+                  label: "IoTSuite",
+                  to: "https://wise-iot.advantech.com/zh-tw/marketplace/solutions/wise-iotsuite",
+                },
+                {
+                  label: "iMachine",
+                  to: "https://wise-iot.advantech.com/zh-tw/marketplace/product/advantech.machineunite",
+                }
               ],
             },
             {
               type: 'dropdown',
-              label: 'Containerization',
+              label: 'API Reference',
               position: 'left',
-              to: '/EdgeSync/Containers/Intro',
               items: [
                 {
-                  type: 'doc',
-                  docId: 'Containers/Intro',
-                  label: 'Architecture',
-                  docsPluginId: 'EdgeSync',
+                  label: 'EdgeHub',
+                  to: 'https://docs.wise-paas.advantech.com/zh-tw/Guides_and_API_References/1676956646152508777/1677046206377513884/1717582950776559539/v2.1.0'
                 },
                 {
-                  type: 'doc',
-                  docId: 'Containers/Environment/intro',
-                  label: 'AI Environment Setup',
-                  docsPluginId: 'EdgeSync',
-                },
-                {
-                  type: 'doc',
-                  docId: 'Containers/usecase',
-                  label: 'Quick Sample',
-                  docsPluginId: 'EdgeSync',
-                },
-                {
-                  to: 'https://dev-marketplace.advantech.com/en-us/containers?pageIndex=1',
-                  label: 'Container Catalog',
-                },
+                  label: 'EdgeLink',
+                  to: 'https://docs.wise-paas.advantech.com/zh-tw/Guides_and_API_References/1571367409966112123/1574927875848110211/1659609863657254888/v2.0'
+                }        
               ],
-            },  
-            {
-              type: 'doc',
-              docId: 'Overview',
-              docsPluginId: 'BSP', 
-              label: "BSP & Yocto", 
-              position: "left",
-            },    
+            }
             /* if you want to add version dropdown button, please uncomment the code below, if there is no version dropdown button keep remark the code below 
             {
               type: 'docsVersionDropdown',
