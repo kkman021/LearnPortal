@@ -1,0 +1,71 @@
+---
+id: 獲取參數的原始原始數據
+title: "獲取參數的原始原始數據"
+description: "獲取參數的原始原始數據"
+sidebar_label: "獲取參數的原始原始數據"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVm9TE0cc/irO71U7cyEBRzvcOxEQWm0dCGUo5sXmbklO7/bOvb1I5uZeqNDSAoaqYMVxGDsq0Q5Y7WCpf78Md4FXfIX2t5uQhFi00zfJ3u7+/u7zPLshmNQ3uOUJy2WgQ23xRVxZiSvXk+Xt2upMfGMtXp9Xv8nydnJrFTTwqRFwS5RBnwwhTwmn/FQgiqBP5iItBEEZYWKIEpNyOZfTgNPLAfVFn2uWQQ/lp8WpCbrgAdXAcJmgTOAS8TzbMgimk77oY04h+EaROgRHouxR0MHNX6SGAK3F0SRYJuYmCBdZy6GgAWWmHOU08LjrUS4s6qMXy2zx5QtusQJohxqhWjDcj36miePZuHfszGB5YrzbNs98W+46l53o+fr0d/0T49N9Ez3nIGqN3vRvMUELlHcE2FuZx6bevba3cmv/zULy7Lfa+k31mcz90Rq2+4tMd2/v8RO9mUwmEzXr+niM2tZScn/tP8Q4manHcJldPueygtsSJe+6NiWsI0ryy7N46XF8fXbn7fva7ao06+/Dfjg4HPN8ykWf7eY/2Vebo6RyM559JO2jSANhCXkW33CrYDFij5Ar/USQEYUwiCLcxKnvucxXx92TyeDfoUBzS/FPa/A/sNeOKZMI4rkWE37LXsI5KXfWKImEBNuaAQ0sQZ0PGR2eZ4GTpxxkfVMWtc2zli8+GizeuJNsbsVzd3YfVD/g9AD9B0iYlKWUiB0ghy4HxEaqa3JWSDpFRx6Darw8B0QAFUXX/AeKBSp7RlAnIF3qSXuEE4cKytNDw6Npt+4mzZUfKTO8RLkvVSbgNuhQFMLz9XSaeFaqGORTJi1ZBnVZKm+lQkYc6nvEoFEqNOzAF5RHXWHR9QWuRB2NGTALdCjIHzt1fjhee1V7eGNs5CxoUCLcInlbHeqBT4WfKRLYAnRwCHrvbPXPb+OlxdqTV3srt3BQfY4cqOfS7oEynxC/UxPufV9797Bp28j+kLFZoMdPnugiZokwQY1il+E6Hb52tl8nT9YaviJU4YZwjyKmVYWt8n0ACuwzHoDchmSVm0CrDwZd7hBM5MvxLGbZLvhNPHrWV1QCGdMpqmUNVD0wPHg+K+06RWt9LZl7OdyPgrXwQ7y5uvv46m71abxcqa3OqEUpBMjQkea9MtAAsNL3o7W6Tarb9LVFXts0sU0S1a3VoW44HWG9U0o26xRpIG1kYDQ7FdiIuH9DY1JZ2nl3r2Xjzuv5vfu/7r9ZiGev7laf125Xk7mXqhs7rx/tbM/Hs+vx5l/7b1YvsNSx+vLTxd2NH+X3u4e1rRkcIRTuVj+Lf1/cff7gc5xRF1xzhLf9s8fJ3WvJ3Eqy8WdceaF06gKKNBJRJdrTlcEz91xfOIQ1SPKJL4e2msOm9H6ScR1Wgk6LtGcTi2EeUhjCuq5MQqlHikxdWUCDoeFR0KChLvhiqOtLTrELjcIwT3w6xu0owunLAeX4tsk1xUA9bRoYRkG6RMugw2lVQCqLqeF2FE298x7BZ5GyOGUY1BNH7s21qOaZgSzSrv5sclwTTTi5ogoBHbA42U/JZjkXgk1YISAF3KtcIl1IO8cPcVoW1SAuK7ckGIZqR9a9RFmEOqoqEfgNEd4GfwM0zBFV
+sidebar_class_name: "get api-method"
+info_path: EdgeHub/APIs/edgehub-restful-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"獲取參數的原始原始數據"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/parameter/HIS/original/rawData"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+獲取參數的原始原始數據
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["id","startTime","endTime"],"properties":{"id":{"type":"string","description":"參數ID","example":"UGFyYW1ldGVy.MTY2NCZDYWxBY2M"},"startTime":{"type":"integer","description":"開始時間，毫秒時間戳","example":1701993590000},"endTime":{"type":"integer","description":"結束時間，毫秒時間戳","example":1701993600000},"onlyMongo":{"type":"boolean","description":"是否僅使用MongoDB"},"mongoUpsertBlob":{"type":"boolean","description":"是否使用MongoDB插入Blob"}},"title":"OriginalRawDataRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"成功","content":{"application/json":{"schema":{"type":"object","properties":{"datapoints":{"type":"array","description":"數據數組","items":{"type":"array","items":{"type":"number"}}},"fieldList":{"type":"array","description":"字段列表","items":{"type":"string","example":["datavalue","quality","datatime"]}}},"title":"OriginalRawDataResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: 獲取機器的參數
+title: "獲取機器的參數"
+description: "獲取指定機器的所有參數"
+sidebar_label: "獲取機器的參數"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVltvE0cU/itoHioirS9xCiJ+i8gFt4ACOKASomq8e2Jvsju7zMymWKuVQgltIKROBUTEtImoAphIXKVSSkL4M17beeIvwOzF9sYOcaX6xTs7c779zplz+WykAJOpanLVICiN6stv3NJq7c6v7oty7dmGu1aplxdqt+Zrf9xySzdq998hCTGQLaryIkpP2igHmAIdsngBpSenHMlGHAgm/BRgBaj3bkpCJqZYBw6UeUYE64DSSMdyQSWQUZCEVPF1E/MCkhCFq5ZKQUFpTi2QEJMLoGOUthEvmsKQcaqSPHKkfex9xpnhTzt33NLL6vZjd3c98MjbGRrP+EskSFFgpkEYMIGcSibF3z68xRX39gaSkGwQDoSLE9g0NVXG4kRiholjdidBIzcDMkcSMqlhAuWq/xENcyBysdMTCcE1rJuaeDWoM88zzHtAbA9s8yymFBdFTDno7HAMVelGKBoJ//IzwxGmE2OjxR8u9WvK2MVi/MzM7E9nsxn9XGrQOjM8Ilz48b8gH3VvPt27Ual++Fi/V+mLfCc1mDyW+uakQZL9AraVNoeChwkRgcteGp3BY5p1+VxI2iPbDVYlHPJAD8Q9mLTH2ZGCVO8tCO7Kcr3yOsK16fQc1izIeiCHgs3v7D1ad9eXIkhnLT0HVEDNqqSH0HWBOGkQxjHhfuFNY0vjFwWtHsC2HzS2lt35nQheUgBZROU9+LT6ovphOWItjJmJySm1hwurvru9t7bSbt+fTAYAp42eAJb2AQhzCrJBFZXke7uZRuXB3p2FbpG1KAU/sDIFzEEZ6hqUaYPqmH+ho2AOMa7qEC2UZGog1p+KJfuzyVQ6dTyd+jaePHH8shdnU/kfcQfigycGPFzZosygX29phzWKSJQ62li3UqmVSo2Pr+rlBXez3Nhab1Tme+93Gib5r/MFEpu4IIhxuNY1Xu1ZKH4S4ir31uNhQ/Y3gl0deMFQvszXPHh8xJxLo8RcKtFq4Am72YEcb8rSuXBeWlT7kj0Fzk2WTiSwqcYKVi6mwJwqg0FiOTVmiz7DTCyDE7NlzWIcqBO3CwbjYsfpCOOIkodTVu7I0HjG3Xhf3/xt4vxpJNoMVXFO8wPVxPQno1fw3tgW6J0X8/sH0cCevd9bvRt0MpEePpcoAhCGMevsEg9/qe9utmxD9vuMlTwMHD8Wx8ocJhzkQlw29C71ui2adIDliHkf6pYLYlr7Hrarl+YtizijQHWItX8IScHDaFgr313K+jnSrnda2Wuq30MxVDYFfzucBygzOp717DqI159u1BbfehrGl2GNJ9cblS33fqleXvA3kUgplUz7fStIvPBCz49cyE5bmrjYgy69Vlqp7j5sO1jdXtr78y+hmm5eb1Re1+9Vaotv/Y9Wtx9X3y25N5+6L/79tFO+QmJHgu2t5cbzW956d7P+94J48sfiUffVcuP1oz7xxq/W1pOo2JdPams/1xZXa8//cUtvRDHfLV8hIvmAMp9oKu7NBtNgXMckzMWWPg2VaVOT7usgTb3Wk6ANbkwUe8LUsEq8filqzg5KdRLNpVBExkoo3RIMU36uinO2ncMMJqjmOOL1VQuoEMpTrdLyKlpRmXhWUHoaawy+4sDR84Ea7jvSu7w9wKcwNUkRBYpCdDAJzUIxIsedKVF9oYK3g/0hWQaTt1l2SGFRZc1WNzaSRRLC0draV0seeldWtu2fyBqzQBynSZKLtSDoOJ8BBGD2pA==
+sidebar_class_name: "get api-method"
+info_path: EdgeHub/APIs/edgehub-restful-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"獲取機器的參數"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/parameters/{machineId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+獲取指定機器的所有參數
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"machineId","in":"path","required":true,"schema":{"type":"string"},"description":"機器ID，可以從獲取機器API獲取"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"成功","content":{"application/json":{"schema":{"type":"object","properties":{"latency":{"type":"string","example":"9ms"},"data":{"type":"object","properties":{"parameters":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","description":"參數ID","example":"UGFyYW1ldGVy.MjkwNTImQ29uMDE"},"_id":{"type":"string","description":"參數ID(內部使用)","example":"29052&Con01"},"machineId":{"type":"string","description":"機器ID","example":"TWFjaGluZQ.MjkwNTI"},"_machineId":{"type":"integer","description":"機器ID(內部使用)","example":29052},"name":{"type":"string","description":"參數名稱","example":"Con01"},"valueType":{"type":"string","description":"值類型","example":"Number"},"kind":{"type":"string","description":"類型","example":"Constant"},"defaultValue":{"type":"string","description":"默認值","example":"0"},"unit":{"type":"string","description":"單位","example":""},"spanHi":{"type":"integer","description":"上限","example":100},"spanLo":{"type":"integer","description":"下限","example":0},"recordingType":{"type":"string","description":"記錄類型","example":"Current"},"createdAt":{"type":"string","format":"date-time","example":"2023-12-01T02:26:24.086Z"},"updatedAt":{"type":"string","format":"date-time","example":"2023-12-01T02:26:23.983Z"},"cursor":{"type":"string","example":"UGFyYW1ldGVy.MjkwNTImQ29uMDE"},"description":{"type":"array","description":"參數描述的多語言","items":{"type":"object","properties":{"lang":{"type":"string","example":"en-US"},"text":{"type":"string","example":""}}}}},"title":"Parameter"}}}}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

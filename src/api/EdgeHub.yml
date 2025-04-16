@@ -1,0 +1,990 @@
+openapi: 3.0.4
+info:
+  title: EdgeHub RESTful API
+  description: |
+    EdgeHub提供RESTful API介面，允許用戶訪問以下內容：
+    - 用戶認證
+    - 群組
+    - 機器(對象)
+    - 參數
+    - 參數的實時或歷史數據
+  version: "2.0"
+servers:
+  - url: https://api-hub-deviceon-bi-{namespace}-{cluster}.{hostname}
+    description: EdgeHub API基礎URL
+    variables:
+      namespace:
+        default: master
+        description: 命名空間名稱
+      cluster:
+        default: ensaas
+        description: 集群名稱
+      hostname:
+        default: edge365.advantech.com
+        description: 主機名稱
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    tenantHeader:
+      type: apiKey
+      in: header
+      name: IFPTenant
+      description: 租戶ID，指定要訪問的租戶
+
+  schemas:
+    LoginRequest:
+      type: object
+      required:
+        - username
+        - password
+      properties:
+        username:
+          type: string
+          description: SSO用戶帳號，以電子郵件格式
+          example: sa.jing@advantech.com.cn
+        password:
+          type: string
+          description: SSO用戶密碼
+          example: abcdefg
+        setCookie:
+          type: boolean
+          description: 可選，設置為true將在瀏覽器中寫入cookie
+          example: true
+    
+    LoginResponse:
+      type: object
+      properties:
+        latency:
+          type: string
+          description: API查詢延遲，以毫秒為單位
+          example: "81ms"
+        data:
+          type: object
+          properties:
+            tokenType:
+              type: string
+              description: 令牌類型，目前僅支持"Bearer"
+              example: Bearer
+            accessToken:
+              type: string
+              description: API訪問令牌，所有後續請求的Authorization標頭中都需要包含此令牌
+              example: eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9...
+            expiresIn:
+              type: integer
+              description: 令牌過期日期，Unix時間戳格式，令牌有效期為1小時
+              example: 1688024303
+            refreshToken:
+              type: string
+              description: Base64格式的字符串，用於刷新令牌
+              example: 8b684897-1647-11ee-88bd-0a580adf40db
+            user:
+              type: object
+              properties:
+                tenants:
+                  type: array
+                  description: 登錄用戶的租戶信息
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: 租戶ID，請求數據相關API時需要，需要包含在標頭中
+                        example: VGVuYW50.ZDet-2iqhavNUEAg
+                      name:
+                        type: string
+                        description: 租戶名稱
+                        example: satest
+    
+    RefreshTokenRequest:
+      type: object
+      required:
+        - token
+      properties:
+        token:
+          type: string
+          description: Base64格式的字符串，從登錄API的"refreshToken"獲取
+          example: 20df5ce0-165e-11ee-88bd-0a580adf40db
+    
+    RefreshTokenResponse:
+      type: object
+      properties:
+        latency:
+          type: string
+          description: API查詢延遲，以毫秒為單位
+          example: "9ms"
+        data:
+          type: object
+          properties:
+            tokenType:
+              type: string
+              description: 令牌類型，目前僅支持"Bearer"
+              example: Bearer
+            accessToken:
+              type: string
+              description: API訪問令牌，所有後續請求的Authorization標頭中都需要包含此令牌
+              example: eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9...
+            expiresIn:
+              type: integer
+              description: 令牌過期日期，Unix時間戳格式，令牌有效期為1小時
+              example: 1688034051
+            refreshToken:
+              type: string
+              description: Base64格式的字符串，用於刷新令牌
+              example: 3da6e1ff-165e-11ee-88bd-0a580adf40db
+    
+    SetMyTenantRequest:
+      type: object
+      required:
+        - tenantId
+      properties:
+        tenantId:
+          type: string
+          description: 租戶ID，從登錄API獲取
+          example: VGVuYW50.ZCI4Q928Cafk07SD
+    
+    Group:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 群組ID
+          example: R3JvdXA.MTEyMg
+        _id:
+          type: integer
+          description: 群組ID(內部使用)
+          example: 1122
+        parentId:
+          type: string
+          description: 父群組ID
+          example: null
+        _parentId:
+          type: integer
+          description: 父群組ID(內部使用)
+          example: null
+        tenantId:
+          type: string
+          description: 租戶ID
+          example: VGVuYW50.ZWb-tfKRKUpOavef
+        sourceName:
+          type: string
+          description: 群組名稱，作為DB中的鍵
+          example: PM Test
+        owner:
+          type: string
+          description: 租戶所有者的帳號，以電子郵件格式
+          example: tracy.su@advantech.com.tw
+        timeZone:
+          type: string
+          description: 時區
+          example: Asia
+        timeZoneInfo:
+          type: object
+          properties:
+            label:
+              type: string
+              example: (GMT+08:00) Asia
+            timeZone:
+              type: string
+              example: Asia
+            utcOffset:
+              type: integer
+              example: 480
+        depth:
+          type: integer
+          description: 深度
+          example: 1
+        coordinate:
+          type: object
+          properties:
+            longitude:
+              type: string
+              example: "0.0000000000"
+            latitude:
+              type: string
+              example: "0.0000000000"
+        createdAt:
+          type: string
+          format: date-time
+          example: "2023-11-29T09:04:54.089Z"
+        updatedAt:
+          type: string
+          format: date-time
+          example: "2023-11-29T09:04:54.089Z"
+        name:
+          type: array
+          description: 群組名稱的多語言
+          items:
+            type: object
+            properties:
+              lang:
+                type: string
+                example: en-US
+              text:
+                type: string
+                example: PM Test
+        description:
+          type: array
+          description: 群組描述的多語言
+          items:
+            type: object
+            properties:
+              lang:
+                type: string
+                example: en-US
+              text:
+                type: string
+                example: PM Test
+        descendants:
+          type: array
+          description: 後代群組對象，與此對象結構相同
+          items:
+            $ref: '#/components/schemas/Group'
+    
+    Machine:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 機器ID
+          example: TWFjaGluZQ.MjkwNTI
+        _id:
+          type: integer
+          description: 機器ID(內部使用)
+          example: 29052
+        groupId:
+          type: string
+          description: 群組ID
+          example: R3JvdXA.MTEyMg
+        _groupId:
+          type: string
+          description: 群組ID(內部使用)
+          example: "1122"
+        tenantId:
+          type: string
+          description: 租戶ID
+          example: VGVuYW50.ZWb-tfKRKUpOavef
+        sourceName:
+          type: string
+          description: 機器名稱
+          example: Obj01
+        createdAt:
+          type: string
+          format: date-time
+          example: "2023-12-01T02:25:49.294Z"
+        updatedAt:
+          type: string
+          format: date-time
+          example: "2023-12-01T02:25:49.254Z"
+        machineType:
+          type: object
+          properties:
+            parentKey:
+              type: string
+              example: default
+            key:
+              type: string
+              example: DefaultEquipType
+        name:
+          type: array
+          description: 機器名稱的多語言
+          items:
+            type: object
+            properties:
+              lang:
+                type: string
+                example: en-US
+              text:
+                type: string
+                example: Obj01
+        description:
+          type: array
+          description: 機器描述的多語言
+          items:
+            type: object
+            properties:
+              lang:
+                type: string
+                example: en-US
+              text:
+                type: string
+                example: ""
+    
+    Parameter:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 參數ID
+          example: UGFyYW1ldGVy.MjkwNTImQ29uMDE
+        _id:
+          type: string
+          description: 參數ID(內部使用)
+          example: 29052&Con01
+        machineId:
+          type: string
+          description: 機器ID
+          example: TWFjaGluZQ.MjkwNTI
+        _machineId:
+          type: integer
+          description: 機器ID(內部使用)
+          example: 29052
+        name:
+          type: string
+          description: 參數名稱
+          example: Con01
+        valueType:
+          type: string
+          description: 值類型
+          example: Number
+        kind:
+          type: string
+          description: 類型
+          example: Constant
+        defaultValue:
+          type: string
+          description: 默認值
+          example: "0"
+        unit:
+          type: string
+          description: 單位
+          example: ""
+        spanHi:
+          type: integer
+          description: 上限
+          example: 100
+        spanLo:
+          type: integer
+          description: 下限
+          example: 0
+        recordingType:
+          type: string
+          description: 記錄類型
+          example: Current
+        createdAt:
+          type: string
+          format: date-time
+          example: "2023-12-01T02:26:24.086Z"
+        updatedAt:
+          type: string
+          format: date-time
+          example: "2023-12-01T02:26:23.983Z"
+        cursor:
+          type: string
+          example: UGFyYW1ldGVy.MjkwNTImQ29uMDE
+        description:
+          type: array
+          description: 參數描述的多語言
+          items:
+            type: object
+            properties:
+              lang:
+                type: string
+                example: en-US
+              text:
+                type: string
+                example: ""
+    
+    OriginalCalculatedDataRequest:
+      type: object
+      required:
+        - id
+        - startTime
+        - endTime
+        - precise
+      properties:
+        id:
+          type: string
+          description: 參數ID
+          example: UGFyYW1ldGVy.MTY2NCZDYWxBY2M
+        startTime:
+          type: integer
+          description: 開始時間，毫秒時間戳
+          example: 1701990000000
+        endTime:
+          type: integer
+          description: 結束時間，毫秒時間戳
+          example: 1701993600000
+        precise:
+          type: string
+          description: 精確度，僅支持minute, hour, day, month, year
+          example: hour
+        mongoUpsertBlob:
+          type: boolean
+          description: 是否使用MongoDB插入Blob
+    
+    OriginalCalculatedDataResponse:
+      type: object
+      properties:
+        datapoints:
+          type: array
+          description: 數據數組
+          items:
+            type: array
+            items:
+              type: number
+        fieldList:
+          type: array
+          description: 字段列表
+          items:
+            type: string
+            example: [maxvalue, minvalue, lastvalue, avgvalue, datatime, quality]
+    
+    OriginalRawDataRequest:
+      type: object
+      required:
+        - id
+        - startTime
+        - endTime
+      properties:
+        id:
+          type: string
+          description: 參數ID
+          example: UGFyYW1ldGVy.MTY2NCZDYWxBY2M
+        startTime:
+          type: integer
+          description: 開始時間，毫秒時間戳
+          example: 1701993590000
+        endTime:
+          type: integer
+          description: 結束時間，毫秒時間戳
+          example: 1701993600000
+        onlyMongo:
+          type: boolean
+          description: 是否僅使用MongoDB
+        mongoUpsertBlob:
+          type: boolean
+          description: 是否使用MongoDB插入Blob
+    
+    OriginalRawDataResponse:
+      type: object
+      properties:
+        datapoints:
+          type: array
+          description: 數據數組
+          items:
+            type: array
+            items:
+              type: number
+        fieldList:
+          type: array
+          description: 字段列表
+          items:
+            type: string
+            example: [datavalue, quality, datatime]
+    
+    SetParameterDataRequest:
+      type: object
+      properties:
+        paramValue:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 參數ID
+                example: UGFyYW1ldGVy.MSZTSU0wMDE
+              value:
+                oneOf:
+                  - type: number
+                  - type: string
+                description: 參數值，取決於數據類型
+                example: 100
+              type:
+                type: integer
+                description: 類型(1=模擬量, 2=離散量, 3=文本)
+                example: 1
+    
+    SetParameterDataResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            message:
+              type: string
+              example: OK
+        latency:
+          type: string
+          example: 200 ms
+
+paths:
+  /v2/auth/login:
+    post:
+      summary: 登錄
+      description: 使用SSO憑證登錄
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+  
+  /v2/auth/refreshToken:
+    post:
+      summary: 刷新令牌
+      description: 使用刷新令牌獲取新的訪問令牌
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RefreshTokenRequest'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RefreshTokenResponse'
+  
+  /v2/auth/setMyTenant:
+    post:
+      summary: 設置我的租戶
+      description: 設置當前用戶的租戶
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetMyTenantRequest'
+      responses:
+        '200':
+          description: 成功
+  
+  /v2/auth/logout:
+    post:
+      summary: 登出
+      description: 登出當前用戶
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: 成功
+  
+  /v2/groups:
+    get:
+      summary: 獲取群組
+      description: 獲取所有群組
+      security:
+        - bearerAuth: []
+        - tenantHeader: []
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  latency:
+                    type: string
+                    example: 28ms
+                  data:
+                    type: object
+                    properties:
+                      groups:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Group'
+  
+  /v2/machines/{groupId}:
+    get:
+      summary: 獲取群組的機器
+      description: 獲取指定群組的所有機器(對象)
+      security:
+        - bearerAuth: []
+        - tenantHeader: []
+      parameters:
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: 群組ID，可以從獲取群組API獲取
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  latency:
+                    type: string
+                    example: 18ms
+                  data:
+                    type: object
+                    properties:
+                      machines:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Machine'
+  
+  /v2/parameters/{machineId}:
+    get:
+      summary: 獲取機器的參數
+      description: 獲取指定機器的所有參數
+      security:
+        - bearerAuth: []
+        - tenantHeader: []
+      parameters:
+        - name: machineId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: 機器ID，可以從獲取機器API獲取
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  latency:
+                    type: string
+                    example: 9ms
+                  data:
+                    type: object
+                    properties:
+                      parameters:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Parameter'
+  
+  /v2/parameter/HIS/original/calculatedData:
+    get:
+      summary: 獲取參數的原始計算數據
+      description: 獲取參數的原始計算數據
+      security:
+        - bearerAuth: []
+        - tenantHeader: []
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OriginalCalculatedDataResponse'
+  
+  /v2/parameter/HIS/original/rawData:
+    get:
+      summary: 獲取參數的原始原始數據
+      description: 獲取參數的原始原始數據
+      security:
+        - bearerAuth: []
+        - tenantHeader: []
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OriginalRawDataResponse'
+  
+  /v2/parameter/HIS/{method}/data:
+    get:
+      summary: 獲取參數的自動縮放數據
+      description: 獲取參數的自動縮放或固定縮放數據
+      security:
+        - bearerAuth: []
+        - tenantHeader: []
+      parameters:
+        - name: method
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [autoScale, fixedScale]
+          description: 方法，僅支持autoScale或fixedScale
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: 參數ID
+        - name: startTime
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: 開始時間，毫秒時間戳
+        - name: endTime
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: 結束時間，毫秒時間戳
+        - name: dataType
+          in: query
+          required: true
+          schema:
+            type: string
+            enum: [max, min, avg, last]
+          description: 數據類型，僅支持max, min, avg, last
+        - name: maxPoints
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: 最大點數
+        - name: interval
+          in: query
+          required: true
+          schema:
+            type: string
+            enum: [sec, min, hour, day, month, year]
+          description: 間隔，支持sec, min, hour, day, month, year
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  datapoints:
+                    type: array
+                    description: 數據數組，[值, 質量, 數據時間]
+                    items:
+                      type: array
+                      items:
+                        type: number
+                  interval:
+                    type: integer
+                    description: 時間間隔，以毫秒為單位
+                  nextData:
+                    type: array
+                    description: 僅一個下一個數據
+                    items:
+                      type: number
+                  previousData:
+                    type: array
+                    description: 僅一個前一個數據
+                    items:
+                      type: number
+  
+  /v2/parameter/RT/data:
+    get:
+      summary: 獲取參數的最新數據
+      description: 獲取參數的最新數據
+      security:
+        - bearerAuth: []
+        - tenantHeader: []
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: array
+            items:
+              type: string
+          description: 參數ID數組
+        - name: before
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: 此時間戳之前的數據(秒)
+        - name: after
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: 此時間戳之後的數據(秒)
+        - name: includeBefore
+          in: query
+          required: false
+          schema:
+            type: boolean
+          description: 是否包含before時間戳的數據
+        - name: includeAfter
+          in: query
+          required: false
+          schema:
+            type: boolean
+          description: 是否包含after時間戳的數據
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      datapoints:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            quailty:
+                              type: integer
+                              example: 0
+                            timestamp:
+                              type: integer
+                              example: 1708596913001
+                            value:
+                              oneOf:
+                                - type: number
+                                - type: string
+                              example: 292301
+                  latency:
+                    type: string
+                    example: 5.479707ms
+    post:
+      summary: 設置參數數據
+      description: 設置參數的數據
+      security:
+        - bearerAuth: []
+        - tenantHeader: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetParameterDataRequest'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SetParameterDataResponse'
+  
+  /v2/parameter/statistic/discrete/{op}:
+    get:
+      summary: 獲取參數的統計數據(離散數據類型)
+      description: 獲取參數的統計數據(離散數據類型)
+      security:
+        - bearerAuth: []
+        - tenantHeader: []
+      parameters:
+        - name: op
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [sum]
+          description: 操作，僅支持sum
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: 參數ID
+        - name: startTime
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: 開始時間，毫秒時間戳
+        - name: endTime
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: 結束時間，毫秒時間戳
+        - name: status
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: 離散數
+        - name: precise
+          in: query
+          required: true
+          schema:
+            type: string
+            enum: [min, hour, day, month, year]
+          description: 精確度，支持min, hour, day, month, year
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    description: 狀態發生次數
+                    example: 183
+                  duration:
+                    type: integer
+                    description: 狀態持續時間，以秒為單位
+                    example: 1830
+  
+  /v2/parameter/statistic/analog/{op}:
+    get:
+      summary: 獲取參數的統計數據(模擬數據類型)
+      description: 獲取參數的統計數據(模擬數據類型)
+      security:
+        - bearerAuth: []
+        - tenantHeader: []
+      parameters:
+        - name: op
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [avg, sum]
+          description: 操作，支持avg和sum
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: 參數ID
+        - name: startTime
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: 開始時間，毫秒時間戳
+        - name: endTime
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: 結束時間，毫秒時間戳
+        - name: precise
+          in: query
+          required: true
+          schema:
+            type: string
+            enum: [min, hour, day, month, year]
+          description: 精確度，支持min, hour, day, month, year
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: number
+                    description: 統計值
+                    example: 16190.5
+
+security:
+  - bearerAuth: []
+  - tenantHeader: []

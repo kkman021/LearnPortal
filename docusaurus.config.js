@@ -17,9 +17,9 @@ const generateOpenApiPlugins = () => {
     const id = path.basename(file, '.yml');
     data[id] = {
       specPath: path.join(openapiDir, file),
-      outputDir: `docs/docusaurus-api-docs/${id}`,
+      outputDir: `${id}/APIs`,
       sidebarOptions: {
-        groupPathsBy: 'tag',
+        sidebarPath: require.resolve('./src/sildebar/bsp.js'),
       }
     }
     return data;
@@ -51,7 +51,6 @@ const config = {
   baseUrl: "/",
 
   themes: [
-    'docusaurus-theme-openapi-docs',
     '@docusaurus/theme-mermaid',
     [
       '@easyops-cn/docusaurus-search-local',
@@ -68,6 +67,7 @@ const config = {
         // language: ["en", "zh"],
       }
     ],
+    'docusaurus-theme-openapi-docs',
   ],
 
   // GitHub pages deployment config.
@@ -194,8 +194,10 @@ const config = {
               position: 'left',
               items: [
                 {
-                  label: 'EdgeHub',
-                  to: 'https://docs.wise-paas.advantech.com/zh-tw/Guides_and_API_References/1676956646152508777/1677046206377513884/1717582950776559539/v2.1.0'
+                  type: 'doc',
+                  docId: 'APIs/edgehub-restful-api',
+                  docsPluginId: 'EdgeHub', 
+                  label: "EdgeHub", 
                 },
                 {
                   label: 'EdgeLink',
@@ -222,6 +224,49 @@ const config = {
           darkTheme: prismThemes.dracula,
           additionalLanguages: ['csharp'],
         },
+        languageTabs: [
+          {
+            highlight: "bash",
+            language: "curl",
+            logoClass: "curl",
+          },
+          {
+            highlight: "python",
+            language: "python",
+            logoClass: "python",
+          },
+          {
+            highlight: "csharp",
+            language: "csharp",
+            logoClass: "csharp",
+          },
+          {
+            highlight: "go",
+            language: "go",
+            logoClass: "go",
+          },
+          {
+            highlight: "php",
+            language: "php",
+            logoClass: "php",
+          },
+          {
+            highlight: "java",
+            language: "java",
+            logoClass: "java",
+            variant: "unirest",
+          },
+          {
+            highlight: "powershell",
+            language: "powershell",
+            logoClass: "powershell",
+          },
+          {
+            highlight: "javascript",
+            language: "javascript",
+            logoClass: "javascript",
+          }
+        ],
         /* Remove Algolia search feature
         algolia: {
           // The application ID provided by Algolia
@@ -253,7 +298,7 @@ const config = {
       }),
 
   plugins: [
-    generateOpenApiPlugins(),
+    //generateOpenApiPlugins(),   
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -279,7 +324,6 @@ const config = {
         path: 'BSP',
         routeBasePath: 'BSP',
         sidebarPath: require.resolve('./src/sildebar/bsp.js'),
-        // Make sure the plugin has the following settings
         includeCurrentVersion: true,
         lastVersion: 'current',
         versions: {
@@ -288,6 +332,29 @@ const config = {
             path: '',
           },
         },
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'EdgeHub',
+        path: 'EdgeHub',
+        routeBasePath: 'EdgeHub',
+        docItemComponent : '@theme/ApiItem',
+        sidebarPath: require.resolve('./src/sildebar/openApi.js'),
+      },
+    ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: "edgehubapi",
+        docsPluginId: "classic",
+        config: {
+          EdgeHub: {
+            specPath: "src/api/EdgeHub.yml",
+            outputDir: "EdgeHub/APIs",
+          }
+        }
       },
     ]
   ],

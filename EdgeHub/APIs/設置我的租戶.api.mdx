@@ -1,0 +1,71 @@
+---
+id: 設置我的租戶
+title: "設置我的租戶"
+description: "設置當前用戶的租戶"
+sidebar_label: "設置我的租戶"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFVF1v2zYU/SvFfdoA+QPeug+9ZWm6eh9oFrstttQPtMRYamRJJSm3hqCHbunmrvGcokuAuNiCDVnrFki2FFiWNW1+jSU5T/0L2xUty0nQ7UkUeXl4LnnO8UGnXGOmK0zHBhVGg5341W68vh/e68Y/DqLOftxfiZ9sRZ19UIBTzWOmaIO66EOdEkbZjCcMUBdrQU0BRm96lIuPHL0Nqp/8mozqoArmUQU0xxbUFrhEXNcyNYKHFm5wPNkHrhm0SXAk2i4FFZz6DaoJUKaAFkFQm9iirENNAZc5LmXCpDzZla5kCFww026AcqpJ2U/5wuuXq+HRz/Hm4fHqysx8Oe4+D3sboAC9TZquhQBXP77qfXntfDH/1Wz53S8+LH0wS5aWi+9XLkAQKCBMkVRVqPi8XU2OX5BXAEGABYxy17G55FcqFvFzkkrUWQu/30rQmlQYjg4quA7Hrl2CNwuFVqlAPGEUeHZK8hSsRRlPXsJj1r9PZwjhcrVQIK6ZM7x6TqctU6OOnaubOd8mTcpdotEg52uWxwVlQd43HC5wJThzRXN6g17y6udm5svh1ot4+4crC5+BAi3CTFK3ZEMTTNnWEvEsASo0CaKfQQwfvArXuvHTF8cbD3Ew2INAgTGXkwjU5oTwMwjHj76Nj7azvSn7U5v1Bn3nvfN5oreILahm5DWneQZreHAYPd1KsQJUbyruCupQdjgt8Ymo8J7xAZIyUMdFoIwHFx3WJEjkk2tVZClleYkSXbY5RiGu+SltgwIm0jHksgKyHyhfnJ+89Bu1G61+F+72R4/vjAbPwvVeZlRUE7pqIfPjXCrpaZ/8l7yR2JKT1I9VnkpiYa5SXfIslMabZBP11oZHj6YKh4f3j3/6Ff12985osCeTRdIeHv42PLgf3n0S7v79+mX/up07N15+1h3t3Ev+j7bjP1dwhG+2OXgr/KM72vvlbZwJe99E6wfZKO6vhL8/jja/jjob0c5fYe95tH4QPexft1G+lHFJtJQvYo9otSaxUzVPAjDqPJjOvRNN+lmQ/U9cjp9a0Nui4FrEtPHIxKz+2N2L0CqBAujvxNOZw2tS31ji+3XC6RVmBQFO3/QowwSuZXZMAlhJVYSRsEzboMKsJJqrIhEstzypvVPpi/KfxM/85UoV1TxO8aaj4x5GbmESk1ugAijgJJeRmCSZ88EidsMjDayVmKhCctI6p6ySME39YLenGPq+rKg6y9QOMJ5kQwL/IagFQfAPtTaz6g==
+sidebar_class_name: "post api-method"
+info_path: EdgeHub/APIs/edgehub-restful-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"設置我的租戶"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v2/auth/setMyTenant"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+設置當前用戶的租戶
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["tenantId"],"properties":{"tenantId":{"type":"string","description":"租戶ID，從登錄API獲取","example":"VGVuYW50.ZCI4Q928Cafk07SD"}},"title":"SetMyTenantRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"成功"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: 獲取參數的統計數據-離散數據類型
+title: "獲取參數的統計數據(離散數據類型)"
+description: "獲取參數的統計數據(離散數據類型)"
+sidebar_label: "獲取參數的統計數據(離散數據類型)"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVltPG0cU/ivWeQJpwZSoVbVvSCENbR8iQtQHwsN4d8CTeC+ZmbVirVYqBFpaQ6HhIgFNEJQASRsoVKSU26/x7uIn/kJ6dr22wVwCxS+e2TlzznfOfOfigk6FxpktmWWCCuH4tj8x60+8CGZ2w/nhcGfreH00mNkNpuabygvLwczv8aa89Np/XWwGBQTVHM5kAdReFzKUcMo7HJkFtbfPU1yQ1CSmvE+JTnn0rU8Bm3BiUEm5iC6ZxKCggmWDAgxB2ERmQQFOnzmMUx1UyR2qgNCy1CCguiALNt4QkjNzABSgpmOA2gvCMaDPU874FEyNlw5/OzkY81+MBNObwdggyiG4imWmJ5afOZQXrmG6wVYcua679eqFJFz2MINe2wozJR2gvNFMebborxWDuaHy7NTJwViw+Ue49jLeBqN/1xunpn67psOdyeDV4qeYFpJIR9yi0wn/6o3YnGpMXN+/Bu4YzAQFspbDQQGdoBLDMiMiFijh5/Aq3D4Kl/f8vVUMQ8Qrg5lKClUoKZ0UlFSkQElF95H4nArbMgUVCKS9rQ3/znB1dNL/eREU0CxTUlOiBLHtHNMISqSfCBRzG/2xMk+oJkEBm1s25ZLFRjTLiZWcCW6DL8Xvg5FiOHcQTi8Gfy5hkBWgz4lh5yion315B713OInFP1FdMDYY7o1VqVLafxOuvQyH9vzZjdLh+BkDbV78U8CgMmvp/2kZoJFDWA1USOfb09XCkUZuMSGZltaZ0DiVNO1athfVI55PKovDc6BCVkpbqOk0sVlL1sm06DTPNGqZLRnW4iKNhE006rW4Ws4RknKv1c1aQuKJ1+BZpz5A7zuZVMeDLn9xL1z55VH3t6BAnnBGMrk46FWd8fv2EycnQQWDoPYGjf6vh/7kePh2rzw7hYv1LaR+BctpDdQUhIgGDeWFH8KjldrdBP2Zy/oAvfPF561EzxNTUi3bqllGg67S7n7wdjHR5SFrkwr/EDkXe1hf56tkwDhDJdVwHwuBUlncs7hBEMjX3/UgytOdoaqF2OwbWkjyORsfK0m6d9170BPda6Tc2mIw+qHrLibj2I/+xvzx6uDx+jt/ZgL7WHQIyC5m9luROSaRedUH7e582NPv5PBhL3r0YGKydLRQJ1jaL5ZfLWNnGRk8Xt8Kp9eD0Q+x0dL+m9Ju0R9Z8zf+PTmYf2y2pCrH78aP3/8U7Y9Wwp1hXGHE59ab/L/Gj7eWmvFL3Edqq3B+2N9cDeaGgtHZ4P0//sR23IcfY9FCvsdA21vbMLS2JaRBzISLN+rrpyLg1urRDVRVXlbS5zJt5wgzEWOUm24lu3sh3w51gwHSKMlwxFLJcVBAtWzoiymO11w3QwR9xHOeh5/j8o+przOB+aiD2k9ygl7iT1N3pVc0p6rd+wLMT2khGRfyJOegQNSLbmTsih5+KYT6keL/I7mipV+KpDZf3EJEqg3+KufjueIWPL9WC78UVW0QqcHqqzWGm5Py/PH1AixJETUL9UASjJYNHs4x2WQcdysHHZpGbVl3pWHmQF+qjfmrzh5QgJwu/2fKfaT9XDiuG0v0WE+p6XlVdBL3CNDzPgL4UB3u
+sidebar_class_name: "get api-method"
+info_path: EdgeHub/APIs/edgehub-restful-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"獲取參數的統計數據(離散數據類型)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/parameter/statistic/discrete/{op}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+獲取參數的統計數據(離散數據類型)
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"op","in":"path","required":true,"schema":{"type":"string","enum":["sum"]},"description":"操作，僅支持sum"},{"name":"id","in":"query","required":true,"schema":{"type":"string"},"description":"參數ID"},{"name":"startTime","in":"query","required":true,"schema":{"type":"integer"},"description":"開始時間，毫秒時間戳"},{"name":"endTime","in":"query","required":true,"schema":{"type":"integer"},"description":"結束時間，毫秒時間戳"},{"name":"status","in":"query","required":true,"schema":{"type":"integer"},"description":"離散數"},{"name":"precise","in":"query","required":true,"schema":{"type":"string","enum":["min","hour","day","month","year"]},"description":"精確度，支持min, hour, day, month, year"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"成功","content":{"application/json":{"schema":{"type":"object","properties":{"count":{"type":"integer","description":"狀態發生次數","example":183},"duration":{"type":"integer","description":"狀態持續時間，以秒為單位","example":1830}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

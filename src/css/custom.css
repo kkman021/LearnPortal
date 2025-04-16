@@ -160,3 +160,44 @@ area[href].breadcrumbs__link:hover {
 .docusaurus-mt-lg {
   margin-top: 1rem;
 }
+
+
+.get>.menu__link:before {
+  content:"get";
+  background-color: var(--ifm-color-primary)
+}
+
+.post>.menu__link:before {
+  content: "post";
+  background-color: var(--openapi-code-green)
+}
+
+.delete>.menu__link:before {
+  content: "del";
+  background-color: var(--openapi-code-red)
+}
+
+.put>.menu__link:before {
+  content: "put";
+  background-color: var(--openapi-code-blue)
+}
+
+.patch>.menu__link:before {
+  content: "patch";
+  background-color: var(--openapi-code-orange)
+}
+
+.api-method>.menu__link:before,.schema>.menu__link:before {
+  text-transform: uppercase;
+  width: 55px;
+  height: 20px;
+  margin-right: var(--ifm-spacing-horizontal);
+  text-align: center;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px
+}
