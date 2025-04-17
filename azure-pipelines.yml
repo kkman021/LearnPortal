@@ -34,7 +34,7 @@ stages:
       name: 'CI Agent Pool'
     steps:
     - task: Docker@2
-      displayName: Build Developer Portal Image
+      displayName: Build Learn Portal Image
       inputs:
         command: buildAndPush
         containerRegistry: $(dockerRegistryServiceConnection)
@@ -48,13 +48,13 @@ stages:
   dependsOn: Build
   jobs:
   - job: Deploy
-    displayName: Deploy container
+    displayName: Deploy Learn Portal
     pool:
       name: Developer Portal
     steps:
     - script: |
         docker pull $(containerRegistry)/$(imageRepository):latest
-        docker stop developer-portal
-        docker run -itd --rm --name developer-portal -p 8080:80 $(containerRegistry)/$(imageRepository):latest
+        docker stop learn-portal
+        docker run -itd --rm --name learn-portal -p 8090:80 $(containerRegistry)/$(imageRepository):latest
       displayName: Deploy docker container
 
