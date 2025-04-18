@@ -14,7 +14,7 @@ variables:
   - name: dockerRegistryServiceConnection
     value: 'Edge COA Harbor' 
   - name: imageRepository
-    value: 'edge-coa/developer-portal'
+    value: 'edge-coa/learn-portal'
   - name: containerRegistry
     value: 'advantechedgeai.azurecr.io'
   - name: containerRegistry
