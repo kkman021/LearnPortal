@@ -45,7 +45,7 @@ const config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://learn.advantech.com",
+  url: 'http://localhost:3200/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -350,9 +350,10 @@ const config = {
         id: "edgehubapi",
         docsPluginId: "classic",
         config: {
-          EdgeHub: {
+          edgesync: {
             specPath: "src/api/EdgeHub.yml",
             outputDir: "EdgeHub/APIs",
+            hideSendButton: true,
           }
         }
       },

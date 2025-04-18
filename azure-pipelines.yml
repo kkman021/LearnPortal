@@ -24,6 +24,10 @@ variables:
       value: '$(Build.SourceBranchName)'
     ${{ else }}:
       value: '$(Build.BuildNumber)'
+  - name: developerDomain
+    value: 'https://developer.edgesync.cloud'
+  - name: learnDomain
+    value: 'https://learn.edgesync.cloud'
 stages:
 - stage: Build
   displayName: Build image
@@ -33,6 +37,13 @@ stages:
     pool:
       name: 'CI Agent Pool'
     steps:
+    - task: Bash@3
+      displayName: Replace Urls
+      inputs:
+        targetType: 'inline'
+        script: |
+          sed -i "s|http://localhost:3200|$(learnDomain)|g" docusaurus.config.js
+          sed -i "s|http://localhost:3201|$(developerDomain)|g" docusaurus.config.js
     - task: Docker@2
       displayName: Build Learn Portal Image
       inputs:
