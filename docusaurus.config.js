@@ -205,14 +205,6 @@ const config = {
                 }        
               ],
             }
-            /* if you want to add version dropdown button, please uncomment the code below, if there is no version dropdown button keep remark the code below 
-            {
-              type: 'docsVersionDropdown',
-              docsPluginId: 'EdgeSync',
-              position: 'right',
-              className: 'version-dropdown-button'  // handle version dropdown button class name
-            },
-            */
           ],
         },
         footer: {
