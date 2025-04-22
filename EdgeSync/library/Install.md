@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'Installation'
-description: 'Install and Configure the EdgeSync SDK'
+description: 'Install and Configure the EdgeSync Device Libary'
 sidebar_position: 4.2
 hide_title: true
 ---

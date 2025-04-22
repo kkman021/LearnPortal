@@ -62,25 +62,26 @@
   <circle cx="400" cy="190" r="5" fill="#0b5394" />
   
   <!-- 左側文字 -->
-  <text x="-20" y="190" font-family="Arial" font-size="24" font-weight="bold" fill="#0b5394">EdgeSync Container</text>
-  <text x="-20" y="220" font-family="Arial" font-size="14" fill="#666666" text-anchor="start">
-    <tspan x="-20" dy="0">Chips Container Pass-through</tspan>
-    <tspan x="-20" dy="20">Supporting Qualcomm/NXP/NVIDIA</tspan>
-    <tspan x="-20" dy="20">Providing Container Image Marketplace</tspan>
+  <text x="0" y="190" font-family="Arial" font-size="24" font-weight="bold" text-anchor="start" fill="#0b5394">EdgeSync</text>
+  <text x="0" y="220" font-family="Arial" font-size="24" font-weight="bold" text-anchor="start" fill="#0b5394">Containerization</text>
+  <text x="0" y="240" font-family="Arial" font-size="14" fill="#666666" text-anchor="start">
+    <tspan x="10" dy="5">Chips Container Pass-through</tspan>
+    <tspan x="10" dy="25">Supporting Qualcomm/NXP/NVIDIA</tspan>
+    <tspan x="10" dy="25">Advantech Container Catalog</tspan>
   </text>
   
   <!-- 右上文字 -->
-  <text x="770" y="85" font-family="Arial" font-size="24" font-weight="bold" fill="#0b5394" text-anchor="end">EdgeSync API</text>
-  <text x="770" y="115" font-family="Arial" font-size="14" fill="#666666" text-anchor="end">
-    <tspan x="770" dy="0">Device Management</tspan>
-    <tspan x="770" dy="20">Supporting Monitoring, OTA</tspan>
+  <text x="560" y="85" font-family="Arial" font-size="24" font-weight="bold" fill="#0b5394" text-anchor="start">EdgeSync API</text>
+  <text x="570" y="110" font-family="Arial" font-size="14" fill="#666666" text-anchor="start">
+    <tspan x="570" dy="0">Device Management</tspan>
+    <tspan x="570" dy="25">Supporting Monitoring, OTA</tspan>
   </text>
   
   <!-- 右下文字 -->
-  <text x="770" y="260" font-family="Arial" font-size="24" font-weight="bold" fill="#0b5394" text-anchor="end">EdgeSync SDK</text>
-  <text x="770" y="290" font-family="Arial" font-size="14" fill="#666666" text-anchor="end">
-    <tspan x="770" dy="0">Device Control</tspan>
-    <tspan x="770" dy="20">Supporting C#/Python</tspan>
+  <text x="560" y="260" font-family="Arial" font-size="24" font-weight="bold" fill="#0b5394" text-anchor="start">EdgeSync Device Library</text>
+  <text x="560" y="280" font-family="Arial" font-size="14" fill="#666666" text-anchor="start">
+    <tspan x="570" dy="0">Device Control</tspan>
+    <tspan x="570" dy="25">Supporting C#/Python</tspan>
   </text>
 </g>
 </svg>

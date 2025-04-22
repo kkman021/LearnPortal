@@ -1,29 +1,25 @@
 ---
 sidebar_position: 1
-sidebar_label: 'Introduction'
+sidebar_label: 'EdgeSync Introduction'
 hide_title: true
-pagination_next: SDK/Architecture
+pagination_next: library/Architecture
 pagination_label: EdgeSync Introduction
 ---
 <!-- Doc Page: 1 -->
-
-## Empowering Edge Computing in Industrial Environments
 
 In today's rapidly evolving industrial technology landscape, developers face multifaceted challenges. Beyond integrating various industrial protocols, they must implement Edge AI capabilities, ensure system reliability, and maintain security while enabling scalability. The EdgeSync development ecosystem emerges as a comprehensive solution to these challenges, providing an integrated development environment that enables developers to focus on creating value through advanced applications rather than struggling with technical complexities.
 
 ![EdgeSync](/img/edgesync.svg)
 
-## Foundational Pillars: The EdgeSync Advantage
+## EdgeSync Foundational Pillars
 
-The EdgeSync development ecosystem is built upon three fundamental pillars: **Standardized Development Kit (SDK)**, **Modern Containerized Deployment Architecture**, and **Comprehensive EdgeSync API**. These pillars work in synergy to create a powerful and flexible development environment particularly optimized for industrial computing and Edge AI applications.
+The EdgeSync development ecosystem is built upon three fundamental pillars: **EdgeSync Device Library**, **EdgeSync Containerization**, and **EdgeSync API**. These pillars work in synergy to create a powerful and flexible development environment particularly optimized for industrial computing and Edge AI applications.
 
-### Standardized Development Kit (SDK)
+### EdgeSync Device Library
+The EdgeSync Device Library serves as the primary interface between developers and the system, offering a consistent development experience. More than just a toolkit, it's a comprehensive development framework covering everything from device connectivity and data processing to application deployment.
 
-The SDK serves as the primary interface between developers and the system, offering a consistent development experience. More than just a toolkit, it's a comprehensive development framework covering everything from device connectivity and data processing to application deployment. Through standardized API design, developers can easily integrate various functionalities without delving into complex underlying implementations.
-
-### Containerized Deployment Architecture
-
-Containerization has become indispensable in modern application development. EdgeSync's containerized architecture ensures application consistency and portability while providing flexible scaling capabilities. Developers can easily migrate applications between environments while maintaining consistency across development, testing, and production environments. This containerized approach is especially valuable for Edge AI applications, where it significantly accelerates development cycles by providing pre-configured environments with optimized AI frameworks and tools.
+### EdgeSync Containerization
+EdgeSync Containerization ensures application consistency and portability while providing flexible scaling capabilities. Developers can easily migrate applications between environments while maintaining consistency across development, testing, and production environments. This containerized approach is especially valuable for Edge AI applications, where it significantly accelerates development cycles by providing pre-configured environments with optimized AI frameworks and tools.
 
 ### EdgeSync API
 
@@ -46,8 +42,8 @@ The EdgeSync development ecosystem delivers three distinct advantages for indust
 
 3. **Technology Accessibility**: Complex industrial capabilities become accessible through high-level abstractions in familiar programming languages (C#/Python), bridging the gap between IT and OT domains without sacrificing performance.
 
-In the following chapters, we'll dive deep into the SDK's core functionalities, containerization deployment best practices, and how to leverage these tools to build powerful IIoT applications. Whether you're an experienced developer or new to IIoT, EdgeSync provides the tools and support needed to innovate in the IIoT space.
+In the following chapters, we'll dive deep into the device library's core functionalities, containerization deployment best practices, and how to leverage these tools to build powerful IoT applications. Whether you're an experienced developer or new to IoT, EdgeSync provides the tools and support needed to innovate in the IoT space.
 
-The ecosystem's design philosophy enables developers to stand on the shoulders of giants, focusing on creating real business value rather than repeatedly handling infrastructure issues. In today's rapidly evolving IIoT landscape, such a development ecosystem is key to driving innovation and efficiency.
+The ecosystem's design philosophy enables developers to stand on the shoulders of giants, focusing on creating real business value rather than repeatedly handling infrastructure issues. In today's rapidly evolving IoT landscape, such a development ecosystem is key to driving innovation and efficiency.
 
 This ecosystem represents more than just a collection of tools; it's a comprehensive platform that empowers developers to build the next generation of industrial applications with confidence and efficiency. Through standardized development tools and modern containerized architecture, EdgeSync provides the foundation needed to tackle the challenges of tomorrow's industrial landscape.
