@@ -37,6 +37,8 @@ function useDocTOC() {
 export default function DocItemLayout({children}) {
   const docTOC = useDocTOC();
   const {metadata} = useDoc();
+  const windowSize = useWindowSize();
+
   return (
     <div className="row">
       <div className={clsx('col', !docTOC.hidden && styles.docItemCol)}>
@@ -50,7 +52,7 @@ export default function DocItemLayout({children}) {
             <DocItemContent>{children}</DocItemContent>
             <DocItemFooter />
           </article>
-          <FeedbackWidget />
+          {!docTOC.desktop && 'desktop' && <FeedbackWidget/>}
           <DocItemPaginator />
         </div>
       </div>

@@ -21,8 +21,8 @@ export default function VersionDropdown({ pluginId }) {
 
   useEffect(() => {
     if (!didLog.current) {
-      console.log(`Versions for pluginId "${docPluginId}":`, versions);
-      console.log(`Active version for pluginId "${docPluginId}":`, activeDocContext.activeVersion);
+      //console.log(`Versions for pluginId "${docPluginId}":`, versions);
+      //console.log(`Active version for pluginId "${docPluginId}":`, activeDocContext.activeVersion);
       didLog.current = true;
     }
   }, [docPluginId, versions, activeDocContext]);
