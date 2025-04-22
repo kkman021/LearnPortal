@@ -1,40 +1,38 @@
 .section {
   padding: 10px;
   margin-top: 1rem;
-  text-align: center;
+  text-align: left;
 }
 
 .title {
-  font-size: 1.75rem;
+  font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
 .feedback {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
 }
 
 .button {
-  padding: 0;
-  margin: 0 10px;
-  line-height: 1.5em;
-  background-color: transparent;
+  background: none;
   border: none;
-  border-radius: 0;
-  outline: none;
-  transform: translateZ(0);
-  font: inherit;
+  padding: 0 4px;
   cursor: pointer;
-  text-align: left;
-  transition: transform 0.2s ease;
+  transition: transform 0.15s;
+}
+.button:focus {
+  outline: 2px solid #0074FF;
+  outline-offset: 2px;
 }
 
-.button:hover {
-  transform: scale(1.15);
-}
-
-.emoticon {
-  transition: all 0.2s ease;
+@media (max-width: 996px) {
+  .section {
+    text-align: center;
+  }
+  .feedback {
+    justify-content: center;
+  }
 }
