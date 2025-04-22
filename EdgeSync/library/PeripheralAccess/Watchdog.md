@@ -7,7 +7,7 @@ pagination_label: Access Watchdog
 
 ## Watchdog Timer
 
-This section explains how to control the hardware watchdog timer using the EdgeSync SDK. 
+This section explains how to control the hardware watchdog timer using the EdgeSync Device Library. 
 
 ### Monitoring & Diagnostics
 

@@ -1,13 +1,13 @@
 ---
 sidebar_label: 'Architecture'
-description: 'EdgeSync SDK Architecture'
+description: 'EdgeSync Device Library Architecture'
 sidebar_position: 4.1
 hide_title: true
-pagination_label: EdgeSync SDK Architecture
+pagination_label: EdgeSync Device Library Architecture
 ---
 
 ## Overview
-The EdgeSync SDK provides a simplified hardware abstraction layer for Python and C# applications to streamline device initialization and data exchange. By unifying different hardware operations under a single interface, developers can focus on application logic and system integration without worrying about low-level details. Whether gathering sensor data or controlling various devices, all interactions are handled consistently to emphasize clear architecture relationships and efficient development.
+The EdgeSync Device Library provides a simplified hardware abstraction layer for Python and C# applications to streamline device initialization and data exchange. By unifying different hardware operations under a single interface, developers can focus on application logic and system integration without worrying about low-level details. Whether gathering sensor data or controlling various devices, all interactions are handled consistently to emphasize clear architecture relationships and efficient development.
 
 ## Hardware and Software Layer Relationship
 During the development phase, this approach effectively reduces complexity and simplifies debugging, allowing developers to focus on implementing and testing core functionalities.
@@ -16,14 +16,18 @@ During the development phase, this approach effectively reduces complexity and s
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e6f2ff', 'primaryBorderColor': '#e6f2ff', 'secondaryColor': '#ffffff', 'tertiaryColor': '#f0f5ff', 'clusterBkg': '#ffffff', 'subGraphBkg': '#ffffff' }}}%%
 graph TB
     subgraph "Edge Device"
-        E[Hardware Layer]
+E[Hardware Layer]
+        F[GPIO]
+        G[Temperature Sensor]
+        H[Other IO Devices]
+E[Hardware Layer]
         F[GPIO]
         G[Temperature Sensor]
         H[Other IO Devices]
         subgraph "Application Layer"
             A[Python App]
             B[C# App]
-            D[EdgeSync SDK]
+            D[EdgeSync Device Library]
         end
     end
 
@@ -44,11 +48,11 @@ graph TB
         subgraph "Container Runtime"
             subgraph "Container 1"
                 A1[Python App]
-                D1[EdgeSync SDK]
+                D1[EdgeSync Device Library]
             end
             subgraph "Container 2"
                 A2[C# App]
-                D2[EdgeSync SDK]
+                D2[EdgeSync Device Library]
             end
         end
         
@@ -73,7 +77,7 @@ graph TB
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e6f2ff', 'primaryBorderColor': '#e6f2ff', 'secondaryColor': '#e6f2ff'}}}%%
 sequenceDiagram
     participant App as Application
-    participant SDK as EdgeSync SDK
+    participant SDK as EdgeSync Device Library
     participant Hardware as Edge Device
 
     App->>SDK: susiiot.SusiIot()
@@ -93,7 +97,7 @@ sequenceDiagram
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e6f2ff', 'primaryBorderColor': '#e6f2ff', 'secondaryColor': '#e6f2ff', 'noteBkgColor': 'rgba(189, 208, 247, 0.7)', 'noteBorderColor': 'rgba(189, 208, 247, 0.7)' }}}%%
 sequenceDiagram
     participant App as Application
-    participant SDK as EdgeSync SDK
+    participant SDK as EdgeSync Device Library
     participant Hardware as Edge Device
 
     Note over App,Hardware: Data Reading Process

@@ -1,20 +1,20 @@
 ---
 sidebar_label: 'Installation'
-description: 'Install and Configure the EdgeSync Device Libary'
+description: 'Install and Configure the EdgeSync Device Library'
 sidebar_position: 4.2
 hide_title: true
 ---
 
 ## Overview
 
- * This section will cover how to install the EdgeSync SDK for different programming languages.
- * It will also explain the system information that can be controlled and retrieved using the EdgeSync SDK.
+ * This section will cover how to install the EdgeSync Device Library for different programming languages.
+ * It will also explain the system information that can be controlled and retrieved using the EdgeSync Device Library.
  * Detailed usage will be explained in the following sections.
 
 ## Installation and Verification
 
 :::info Software dependencies
-EdgeSync SDK requires the following two software dependencies. Please verify with your sales representative if your hardware supports them. In principle, they should be pre-installed on your system. If you need to reinstall them, please visit these platforms:
+- EdgeSync Device Library requires the following two software dependencies. Please verify with your sales representative if your hardware supports them. In principle, they should be pre-installed on your system. If you need to reinstall them, please visit these platforms:
 
 - [SUSI](https://github.com/ADVANTECH-Corp/SUSI/)
 - [PlatformSDK(EAPI)](https://www.advantech.com/en/support/details/software-api?id=1-1W0B5BW)
