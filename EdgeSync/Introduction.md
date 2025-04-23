@@ -4,6 +4,8 @@ sidebar_label: 'EdgeSync Introduction'
 hide_title: true
 pagination_next: library/Architecture
 pagination_label: EdgeSync Introduction
+title: 'EdgeSync Introduction'
+description: 'The EdgeSync development ecosystem provides an integrated environment enabling developers to focus on creating value through advanced applications, rather than struggling with technical complexities.'
 ---
 <!-- Doc Page: 1 -->
 

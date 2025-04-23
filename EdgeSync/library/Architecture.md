@@ -1,4 +1,5 @@
 ---
+title: 'EdgeSync Device Library Architecture'
 sidebar_label: 'Architecture'
 description: 'EdgeSync Device Library Architecture'
 sidebar_position: 4.1

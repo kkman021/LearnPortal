@@ -1,4 +1,6 @@
 ---
+title: 'GPIO'
+description: 'Configure and control General Purpose Input/Output pins for digital signal interfacing using the EdgeSync Device Library.'
 hide_title: true
 sidebar_label: 'GPIO'
 sidebar_position: 4.31

@@ -1,4 +1,6 @@
 ---
+title: 'Onboard Sensors'
+description: 'Read onboard sensor data including temperature, voltage, and fan speed using the EdgeSync Device Library.'
 hide_title: true
 sidebar_label: 'Onboard Sensors'
 sidebar_position: 4.33
@@ -10,21 +12,16 @@ import TabItem from '@theme/TabItem';
 
 ## Onboard Sensors
 
-Use the SDK to read onboard sensor data including temperature, voltage, and fan speed. Ensure your hardware supports these measurements.
+Use the EdgeSync Device Library to read onboard sensor data including temperature, voltage, and fan speed. Ensure your hardware supports these measurements.
 
 ### Use Cases
 
 #### 1. Thermal Safeguard in Data Center
 **Scenario:** In a server rack environment where CPU temperatures can spike under heavy load.  
 **Challenge:** Sudden overheating can lead to throttling or shutdowns, affecting service availability.  
-**Solution:** Use the SDK to poll temperature sensors; if readings exceed thresholds, automate fan speed increases or workload throttling to maintain safe operation.
+**Solution:** Use the library to poll temperature sensors; if readings exceed thresholds, automate fan speed increases or workload throttling to maintain safe operation.
 
-#### 2. Power Stability in Remote Station
-**Scenario:** A telecom hub installed in a remote area faces unpredictable power surges and drops.  
-**Challenge:** Voltage fluctuations risk corrupting data and damaging sensitive components.  
-**Solution:** Monitor 3.3V bus voltages via the SDK; on detecting unsafe levels, trigger safe shutdown scripts to protect hardware and preserve data integrity.
-
-#### 3. Predictive Maintenance in Manufacturing
+#### 2. Predictive Maintenance in Manufacturing
 **Scenario:** Embedded PCs on a production line monitor machinery conditions.  
 **Challenge:** Gradual degradation of fans or heat sinks can be hard to spot until failure occurs.  
 **Solution:** Record periodic fan speed and temperature metrics; analyze trends to schedule maintenance before failures disrupt operations.

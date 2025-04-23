@@ -1,4 +1,6 @@
 ---
+title: 'Getting Started'
+description: 'Comprehensive guidance for configuring development environments for NVIDIA and Qualcomm hardware platforms.'
 sidebar_label: 'Getting Started'
 sidebar_custom_props: {"hideFromDocCardList": true,"DocCardCount": 4}
 sidebar_position: 3.0

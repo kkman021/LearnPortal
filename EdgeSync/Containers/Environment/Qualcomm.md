@@ -6,6 +6,7 @@ sidebar_position: 3.1
 tags:
   - Qualcomm
   - QNN SDK
+description: 'Guide to environment verification for AI development on Qualcomm platforms using the QNN SDK and TensorFlow framework.'
 ---
 
 # Introduction

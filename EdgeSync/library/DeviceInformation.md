@@ -1,4 +1,5 @@
 ---
+title: 'Device Information'
 sidebar_label: 'Device Information'
 description: 'Query device and firmware details'
 sidebar_position: 4.4

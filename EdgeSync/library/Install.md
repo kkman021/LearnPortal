@@ -1,4 +1,5 @@
 ---
+title: 'Installation'
 sidebar_label: 'Installation'
 description: 'Install and Configure the EdgeSync Device Library'
 sidebar_position: 4.2

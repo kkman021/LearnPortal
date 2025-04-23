@@ -6,6 +6,7 @@ sidebar_position: 4
 pagination_prev: null
 tags:
   - NVIDIA
+description: 'Guide to implementing containerized applications on NVIDIA-powered edge computing platforms, covering GPU acceleration setup, security best practices, and scalable architectures.'
 ---
 
 # Introduction
@@ -32,7 +33,7 @@ The following components must be installed on your device to run AI applications
 
 | Component | Details |
 |-----------|---------|
-| JetPack Version | 5.1.2 |
+| JetPack Version | 5.1.X |
 | CUDA Version | 11.4.315 |
 | cuDNN Version | 8.6.0.166 |
 | TensorRT Version | 8.5.2.2 |
