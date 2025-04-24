@@ -1,0 +1,71 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+  branches:
+    include:
+      - 'master'
+
+resources:
+- repo: self
+
+variables:
+  - name: dockerRegistryServiceConnection
+    value: 'Edge COA Harbor' 
+  - name: imageRepository
+    value: 'edge-coa/learn-portal'
+  - name: containerRegistry
+    value: 'advantechedgeai.azurecr.io'
+  - name: containerRegistry
+    value: 'harbor.arfa.wise-paas.com'
+  - name: imageTag
+    ${{ if startsWith(variables['Build.SourceBranch'], 'refs/tags/')}}:
+      value: '$(Build.SourceBranchName)'
+    ${{ else }}:
+      value: '$(Build.BuildNumber)'
+  - name: developerDomain
+    value: 'https://developer.edgesync.cloud'
+  - name: learnDomain
+    value: 'https://learn.edgesync.cloud'
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      name: 'CI Agent Pool'
+    steps:
+    - task: Bash@3
+      displayName: Replace Urls
+      inputs:
+        targetType: 'inline'
+        script: |
+          sed -i "s|http://localhost:3200|$(learnDomain)|g" docusaurus.config.js
+          sed -i "s|http://localhost:3201|$(developerDomain)|g" docusaurus.config.js
+    - task: Docker@2
+      displayName: Build Learn Portal Image
+      inputs:
+        command: buildAndPush
+        containerRegistry: $(dockerRegistryServiceConnection)
+        repository: $(imageRepository)
+        dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+        tags: |
+          latest
+          $(imageTag)
+- stage: Deploy
+  displayName: Deploy to docker
+  dependsOn: Build
+  jobs:
+  - job: Deploy
+    displayName: Deploy Learn Portal
+    pool:
+      name: Developer Portal
+    steps:
+    - script: |
+        docker pull $(containerRegistry)/$(imageRepository):latest
+        docker stop learn-portal
+        docker run -itd --rm --name learn-portal -p 9090:80 $(containerRegistry)/$(imageRepository):latest
+      displayName: Deploy docker container
+
