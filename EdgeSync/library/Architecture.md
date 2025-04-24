@@ -10,6 +10,25 @@ pagination_label: EdgeSync Device Library Architecture
 ## Overview
 The EdgeSync Device Library provides a simplified hardware abstraction layer for Python and C# applications to streamline device initialization and data exchange. By unifying different hardware operations under a single interface, developers can focus on application logic and system integration without worrying about low-level details. Whether gathering sensor data or controlling various devices, all interactions are handled consistently to emphasize clear architecture relationships and efficient development.
 
+## Key Capabilities
+The library offers the following features:
+
+### Memory Information
+  - Retrieve total memory count and list available modules
+  - Query type, module type, size (GB), speed (MT/s), rank, voltage (V), bank, manufacturing date code, temperature (°C), write protection status, module/manufacturer details, part numbers, and specific metadata
+### Disk Information
+  - Get total and free disk space (MB)
+### Platform Information
+  - Access motherboard manufacturer, board name, BIOS revision, and SDK library version
+### Hardware Monitoring
+  - Enumerate voltage sources and read voltage values
+  - Enumerate temperature sensors and read temperature values
+  - List fan speed sources
+### GPIO Control
+  - List GPIO pins
+  - Get/set pin direction (input/output)
+  - Get/set pin level (high/low)
+
 ## Hardware and Software Layer Relationship
 During the development phase, this approach effectively reduces complexity and simplifies debugging, allowing developers to focus on implementing and testing core functionalities.
 
@@ -70,48 +89,4 @@ graph TB
     H -->|Handle| F1
     H -->|Adapt| G1
     H -->|Adapt| H1
-```
-
-## Initialization Process
-
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e6f2ff', 'primaryBorderColor': '#e6f2ff', 'secondaryColor': '#e6f2ff'}}}%%
-sequenceDiagram
-    participant App as Application
-    participant SDK as EdgeSync Device Library
-    participant Hardware as Edge Device
-
-    App->>SDK: susiiot.SusiIot()
-    activate SDK
-    SDK->>SDK: import_library()
-    SDK->>Hardware: initialize()
-    Hardware-->>SDK: information 
-    SDK->>SDK: extract_ids()
-    SDK->>SDK: information handle()
-    SDK-->>App: SusiIot instance
-    deactivate SDK
-```
-
-## Data Read/Write Flow
-
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e6f2ff', 'primaryBorderColor': '#e6f2ff', 'secondaryColor': '#e6f2ff', 'noteBkgColor': 'rgba(189, 208, 247, 0.7)', 'noteBorderColor': 'rgba(189, 208, 247, 0.7)' }}}%%
-sequenceDiagram
-    participant App as Application
-    participant SDK as EdgeSync Device Library
-    participant Hardware as Edge Device
-
-    Note over App,Hardware: Data Reading Process
-    App->>SDK: get_data_by_id(device_id)
-    activate SDK
-    SDK->>Hardware: Read Hardware Data
-    Hardware-->>SDK: Return Data
-    deactivate SDK
-
-    Note over App,Hardware: Data Writing Process
-    App->>SDK: set_value(device_id, value)
-    activate SDK
-    SDK->>Hardware: Write to Hardware
-    Hardware-->>SDK: Return Status
-    deactivate SDK
 ```
