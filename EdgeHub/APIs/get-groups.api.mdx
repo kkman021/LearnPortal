@@ -1,0 +1,64 @@
+---
+id: get-groups
+title: "Get groups"
+description: "Retrieve all groups"
+sidebar_label: "Get groups"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNV01z2zYQ/SsYXGpPKVlWko7DU93GcdzUiceWkzaJp7MCVyISEGSBhRxVw//eWZCUJVl2lENnqotp8GE/gPd2lwuZoVdOV6RLK1N5ieQ0zlCAMWLqylB5mUiPKjhNc5l+XMgxgkN3HCiX6cebOllIQguWXiFk6OLaTSId+qq0Hr1MF3I4GPCfdVdXQSn0fhKMTKQqLaElRkFVGa2AUQefPUMX0qscC+AnmlcoU1mOP6MimcjKlRU60o0jA4RWzVeAnpy2U5lI/ApFZXhpeFR4WScyA9rBZHsIdzhwDuYykZqw8N/er7Nt0awfxSn7EGcv1sK8fPLbLPvjuH8+OpmfTzngv9ZsaUs4RfegMbHHCGfBiOBxf9X24eFwWCeyAoeWznYI8CIiG0JsxGmDMRzbFmMPRbhh7ZFAW+MNwXYJdBSRm0f57vRd+PP9s0H/w/txjyavL19fV29hhhM+VV8Gp/ANFLjrRVkokEPNBHhBOYovOBfaxkcm1Rg8rvm/OBcj9MTeylvLItkxj4j+wQtQqgyW2AkWoI2YlK4AWnNCDtS878PPkM3AEqq8r8qiT7fslnSBH0q7Q4ojXaD4h6Grxo+9hlU7Z3ZS7iLHMZrHxbh3ej76cXCUDgb7YtPJ4zs7dCD1djLxSFuZt8Q/PRrUNaseK65c3yTpi4hbFU3NZap0mbZAuEPypZ1qCtk30hj0B8sfp2OAvnsX56UcAmF2TNs2tnRJueZhj893vSIOhk96h4e94fPR4Hk6eJo+e9ofHD3/EI+3yv4Tu3ZdcF1VXb+E82BIG22nAdp2FMW3e/U1YKePnyTa3vVVZB1+3ZrjFhm3RFqJ9PvzWAX8X9JBm4Glbc1uUxsdtk2mCdeLW015LIOeS6QnFxQFh02d1F4s02rzlUo7FQy4vVhZ92Ud5U8xvrgUo2t+iSyQ8jKTqZxiPBtgJcuD2fBgZVRxM3Q+TirBGZnKnKjy6cEBVLqXh3Evw5lWWNreWPcWzCZfgcK6t1AmeEJX9xd56Ynf1Pcy/wU8iuvL37kAx0RPsim+CmNxfHEmEzkDp2Fsmsta2m5mnwkEw1IpgL3cs/ymQzcMZ0U38azvRusB/L3dvzbY5d4ug43N2RSf/PSsv9Yh7tl61e2ta57kuuHvimewJrPVEXBJFT5nvoAIk2kLkkn78LIrFb+9H8llT++GxjvCVfo1xvGKQ8mb1121kGcvL5rO+HDjF75CpSdzbafiNtcqF40nQSW3UfQ+kkx3DawlW3ePlydXo0kw7X2u++gwlStnOkMvYBUu4hQz4RsEY8pbDiB4dP7Oc2TMpGzfpp9sT1x7dAIC5WipnXp5OXLf89M5qFxb9GKvFdk+r16AgwIJXcRcIphYfUXpRK49lU4rMKLqUHEs+cSFhsXRZDPsx35TlZ4KsB1hWXdId6P/RpVbzukPfCm0t8jF56AyoG1sIS4OAY1cP8rZUCbdWH3TUJWXFwuem66dqWte/jug4w+OmztVNd8bHSlY4V9wzpOAUlhRlJ8JDYk2PiGYx8vicXoykomEdfZusDVa7yhp5yu2F4sGMSq/oK25QjRBEP8v65u6rv8Fh1SIcw==
+sidebar_class_name: "get api-method"
+info_path: EdgeHub/APIs/edgehub-restful-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get groups"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/groups"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieve all groups
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful","content":{"application/json":{"schema":{"type":"object","properties":{"latency":{"type":"string","example":"28ms"},"data":{"type":"object","properties":{"groups":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","description":"Group ID","example":"R3JvdXA.MTEyMg"},"_id":{"type":"integer","description":"Group ID (internal use)","example":1122},"parentId":{"type":"string","description":"Parent group ID","example":null},"_parentId":{"type":"integer","description":"Parent group ID (internal use)","example":null},"tenantId":{"type":"string","description":"Tenant ID","example":"VGVuYW50.ZWb-tfKRKUpOavef"},"sourceName":{"type":"string","description":"Group name used as the key in the database","example":"PM Test"},"owner":{"type":"string","description":"Tenant owner's account in email format","example":"tracy.su@advantech.com.tw"},"timeZone":{"type":"string","description":"Time zone","example":"Asia"},"timeZoneInfo":{"type":"object","properties":{"label":{"type":"string","example":"(GMT+08:00) Asia"},"timeZone":{"type":"string","example":"Asia"},"utcOffset":{"type":"integer","example":480}}},"depth":{"type":"integer","description":"Depth","example":1},"coordinate":{"type":"object","properties":{"longitude":{"type":"string","example":"0.0000000000"},"latitude":{"type":"string","example":"0.0000000000"}}},"createdAt":{"type":"string","format":"date-time","example":"2023-11-29T09:04:54.089Z"},"updatedAt":{"type":"string","format":"date-time","example":"2023-11-29T09:04:54.089Z"},"name":{"type":"array","description":"Multilingual group name","items":{"type":"object","properties":{"lang":{"type":"string","example":"en-US"},"text":{"type":"string","example":"PM Test"}}}},"description":{"type":"array","description":"Multilingual group description","items":{"type":"object","properties":{"lang":{"type":"string","example":"en-US"},"text":{"type":"string","example":"PM Test"}}}},"descendants":{"type":"array","description":"Descendant group objects with the same structure as this object","items":"circular(Group)"}},"title":"Group"}}}}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

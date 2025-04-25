@@ -20,7 +20,7 @@ EPC-R7300 ,An industrial barebones PC for the NVIDIA® Jetson Orin™ NX and Jet
 
 ## Pin defination
 ### DC-In
-EPC-R7300 support a lockable DC two pole terminal block that can be connected 9-24 DC external power input
+EPC-R3720 supports a lockable DC=jack header that can be connected 12V　ＤＣ
 
 ![DC-In Diagram](assets/DCIN.jpg)
 

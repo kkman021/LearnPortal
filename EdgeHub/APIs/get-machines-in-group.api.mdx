@@ -1,0 +1,72 @@
+---
+id: get-machines-in-group
+title: "Get machines in group"
+description: "Retrieve all machines (objects) in the specified group"
+sidebar_label: "Get machines in group"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVllP5DgQ/iuWn0BKH4RhNeSNXc5hYdimGXZh0Kg6qXQMiRN8NNOK8t9X5Rz0wQBCK+1Td+zy569c11fyCHWoRGFELnnAR2iUwBkySFOWQZgIiZpt5JN7DI3eZEIykyDTBYYiFhixqcptwT2uMbRKmDkPbks+QVCo9qxJeHB7V3klNyhBmmOECJVbu/N4AQoyNKi0OyQhQx5wB3gScY8LIlSASbjHFT5aoTDigVEWPa7DBDPgQcnNvKBj2ighp7zyVhw6Ijh2su+xp0SECQtBsgmyfGJASIxYrPLMuXSEhjljzfYuTjgRVKiLXGrUdI8/HNLPMvqlDUPUOrYp93iYS4PSkBUURSpCIKvBvSbTcp1y/ajc44XKC1RG1BelYFCG83XfPI4/IStSWtr6nGnnLJh3QLaBXLAEpWBOj2ww028jiOglPsuPcVbfwk72l6iOrw/v4Si1N3/1z+4fns7HJ0T8xxKikAanqF6BZBtkoySkzGrcXLzB3x3u+JXXZc6bRNucWKI52v4yi/7e65+ND+ZnLpF+rAP+imeL+ArLrS2fSNaF8B6WY2e5SvPb0Tf7z/XOsH9zPemZ+HR0elV8hRnGxFjnVoV47grpvdFyZbd4w9fJ/XCL0EKFYDDaMy+BxbnKwPCAMhB7RqyA+EN/u7fl94Zb46Ef+DvBp92+v/vphnBtEf23uDs1bpPlY4f4VkIXoFCaU3yjziKMwaaG4B/est2vbQ8erSgciaqqvKatrdXdSjBsakQq5NRC13bbyLyzQlOQ09f5oexdXXKXgz9ffPu1HHAOLDH9iB+LJv+PO84TshTGfTe5Xy83exmaJI9oAKFjQ3Mn4IOZP2i756BsGkLl5p2atZPLqpQHPDGm0MFgAIXoJXbSi3AmQsxlbyJ6JcVSFxBi1SvD1GqDquqXSa4N7VRrD/k7aGRXoz9ZnCs3ng6iKR7biZtNHp+BEjBJ66fqsOv5VCdswDOgW9aQz1vrOr+ozms+y6dRagC9dvqP2rY723qwcjia4vZvO32IZiANhkk/zLM1rOP2bFXRtG0VxCXNydqzRR3RxZfemTcKgL5rI+41fw7bBvLlesy7htsqj+f8LQQVf6Myknq7rVZ+cnhRt99fd+VGA82FnDbSor6JmZyBUwWc0krIOHfXNqnXxnF0cDmObdrEc/mO1qZQ+UxEqBksmjM3YmKKIKRp/kQErEaln292GRPnzW7wXfbYlUbFwJoEpWmUCS3Xiof+na2JPVq96DQafY0QUteTWa5YIrTJlQghZZ2SY6RHvlOZU3HU3vj9IcWhyLXJQLYJS0MTzbPEFLKTkisNp5NVHxenTcypUQyKFIR0Y4iqtmwK/ZbPfO49CyWPB+30v6uznGzKcgIar1RaVbT8aFGR4L17LkjXDyKh6X/EgxhSja94tDFqdO0m+6hQ/YV3bZrLuWsXqXV9sJlinVSq7qiGW1VeNrt7YYiFWTi3JmepXruGeXQw5h6H5SpdqUqH/iKnsqwtxvkDyqrqKBr6JoJV9S/phEy4
+sidebar_class_name: "get api-method"
+info_path: EdgeHub/APIs/edgehub-restful-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get machines in group"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/machines/{groupId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieve all machines (objects) in the specified group
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"groupId","in":"path","required":true,"schema":{"type":"string"},"description":"Group ID, which can be obtained from the Get Groups API"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful","content":{"application/json":{"schema":{"type":"object","properties":{"latency":{"type":"string","example":"18ms"},"data":{"type":"object","properties":{"machines":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","description":"Machine ID","example":"TWFjaGluZQ.MjkwNTI"},"_id":{"type":"integer","description":"Machine ID (internal use)","example":29052},"groupId":{"type":"string","description":"Group ID","example":"R3JvdXA.MTEyMg"},"_groupId":{"type":"integer","description":"Group ID (internal use)","example":1122},"tenantId":{"type":"string","description":"Tenant ID","example":"VGVuYW50.ZWb-tfKRKUpOavef"},"sourceName":{"type":"string","description":"Machine name","example":"Obj01"},"createdAt":{"type":"string","format":"date-time","example":"2023-12-01T02:25:49.294Z"},"updatedAt":{"type":"string","format":"date-time","example":"2023-12-01T02:25:49.254Z"},"machineType":{"type":"object","properties":{"parentKey":{"type":"string","example":"default"},"key":{"type":"string","example":"DefaultEquipType"}}},"name":{"type":"array","description":"Multilingual machine name","items":{"type":"object","properties":{"lang":{"type":"string","example":"en-US"},"text":{"type":"string","example":"Obj01"}}}},"description":{"type":"array","description":"Multilingual machine description","items":{"type":"object","properties":{"lang":{"type":"string","example":"en-US"},"text":{"type":"string","example":""}}}}},"title":"Machine"}}}}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

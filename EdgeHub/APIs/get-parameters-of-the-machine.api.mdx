@@ -1,0 +1,72 @@
+---
+id: get-parameters-of-the-machine
+title: "Get parameters of the machine"
+description: "Retrieve all parameters of the specified machine"
+sidebar_label: "Get parameters of the machine"
+hide_title: true
+hide_table_of_contents: true
+api: eJytV1lP40gQ/iutfliB5ByYHTT4jeXeGRADyaAdBq06diVuaHd7+ggTWf7vq2ofiRMWsgcv2O2qr46u40tBEzCx5rnlStKI3oLVHOZAmBAkZ5plYEEboqbEpkBMDjGfckhIxuKUS6ABNRA7ze2CRg8FnQDToI+cTWn08FgGBbUgmbQXwBLQ/uwxoEtgryRZBjSiNeRlQgPK0Zmc2ZQGVMMPxzUkNLLaQUBNnELGaFRQu8hR0VjN5YyWwVowVxUguTwJyEvK45TETJIJEDWxjEtIyFSrzAd2DpbU4oYc3VxSdFODyZU0YNBWOBziv66FOxfHYMzUCRrQWEkL0qIUy3PBY4ZSgyeDosWm22ryBLGlAc21ykFbXhkSzIKMF5vxBRR+siwXeHSYGR8vs1sgrqa7lWVaswVm2kJm3sfgyWsOdbNx09ghlycdb8fnZ4s/7vdEcv510b96en65Hl1mX8JDd3VyimH8+U/RyQ6XFrRkgjgDux1j4eHwQ/jLsZLDPcReVtW7Fpb10gEc3Z89sXPhvn1pfPc+vwaMXs1Av4H8hufe8TKo22H7dHj5VYfb2OdMOBh5mPfgvqIo8TKrUNcum4BGrGcut0jhJ5Ra88VYJm3VnVPmhPWm3oc6qaSJD6KDOUQwJ7l9H2SMUqu6qGpyJi/4Ftc2znPQRPCsC7I3HNYon9UWKJ/Vy2soiKEhVjrhcrbdJd024psXdey0hirNsQZmITl6NT1TpTNmaYSjA3qWr5VOOAz3e3thb7g3GoZReBCFv/aHHw+++Yznyf+Iu98//LjvcWOnjdJvz7v3JkgnTxszbq0ZnbBccDlzbGXHkVWhrceiYHL2tucge+M7dNHCz1czt1qb+BdQy61/b1u8+lB/zcCmKqERnYH3B5dkRAfzcLCc84OinU6lX9F63ixbpwWNaGptbqLBgOW8l7pJL4E5j0HJ3oT3ChwoJmcxlL0iFs5Y0GW/SJWx+KXcSOhvzAAZ334mU6X9Nj1NZnDhJn6R4hTSnE1ElbAWu1qmvsX97kcrG8jXjXQ15LBYKn+62iANY2ZD+7iSbXWbCNaUkxnsH3zos2TOpIU47ccq28C6aHTLEqlBQ3rucKlXka1Sn/aWMc+0piz4XgnRoH44a7rm9/tRVSOrZGlZxzn/BIuGFqXV52ZR0Muzm5HX23C6OsatUxG3BY6OiglVlohVhHkKQ7G0uJxWA60uwOYeb0/vRlMn6vvs2mhkcq3mPAFD2Ko48dtuijfIhFAv6IAzyChby75ipqr+Gn2XPTI2oAlzNgVpaxqFx+daudzgU0vVdqq+NLt42vaLl7kFJvwgIkqTlBurNI+7Hc8s+47Njs1RRRP2/XLJlbEZk03B0ogiQdzkw0sWvDaAWi74bxh1fes4MAa5YFz66Yt9W9Tt/kDnIe3w6IBGS0LyWNU6yhXFhBkYa1GWePzDgUam/rhsSz8VEm7wOaHRlAkDb8Szc1vT8V3yX/j130TZFLxc0Jq+4FwM6DMsOr8Qykfs5+ZHRVF/P4pjyO2K5gYPx95tB+j56YgGlHU7dq1DPfqrXhVFJTFSzyDLsnXS4js6WJZ/AewljFo=
+sidebar_class_name: "get api-method"
+info_path: EdgeHub/APIs/edgehub-restful-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get parameters of the machine"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/parameters/{machineId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieve all parameters of the specified machine
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"machineId","in":"path","required":true,"schema":{"type":"string"},"description":"Machine ID, which can be obtained from the Get Machines API"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful","content":{"application/json":{"schema":{"type":"object","properties":{"latency":{"type":"string","example":"9ms"},"data":{"type":"object","properties":{"parameters":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","description":"Parameter ID","example":"UGFyYW1ldGVy.MjkwNTImQ29uMDE"},"_id":{"type":"string","description":"Parameter ID (internal use)","example":"29052&Con01"},"machineId":{"type":"string","description":"Machine ID","example":"TWFjaGluZQ.MjkwNTI"},"_machineId":{"type":"integer","description":"Machine ID (internal use)","example":29052},"name":{"type":"string","description":"Parameter name","example":"Con01"},"valueType":{"type":"string","description":"Value type","example":"Number"},"kind":{"type":"string","description":"Kind","example":"Constant"},"defaultValue":{"type":"string","description":"Default value","example":"0"},"unit":{"type":"string","description":"Unit","example":""},"spanHi":{"type":"integer","description":"Upper limit","example":100},"spanLo":{"type":"integer","description":"Lower limit","example":0},"recordingType":{"type":"string","description":"Recording type","example":"Current"},"createdAt":{"type":"string","format":"date-time","example":"2023-12-01T02:26:24.086Z"},"updatedAt":{"type":"string","format":"date-time","example":"2023-12-01T02:26:23.983Z"},"cursor":{"type":"string","example":"UGFyYW1ldGVy.MjkwNTImQ29uMDE"},"description":{"type":"array","description":"Multilingual parameter description","items":{"type":"object","properties":{"lang":{"type":"string","example":"en-US"},"text":{"type":"string","example":""}}}}},"title":"Parameter"}}}}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

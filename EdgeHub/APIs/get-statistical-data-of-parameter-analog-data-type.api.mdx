@@ -1,0 +1,72 @@
+---
+id: get-statistical-data-of-parameter-analog-data-type
+title: "Get statistical data of parameter (analog data type)"
+description: "Retrieve statistical data for analog-type parameters"
+sidebar_label: "Get statistical data of parameter (analog data type)"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVk1v2zgQ/SvEnBKAjtMsWmB1y27TJPsZOA72kOYwlsYWW4lkSUqNIei/L4aSbMVqs0i6vlgi5+ON+OYNG8jIp07ZoIyGBBYUnKKahA8YlA8qxUJkGFCsjROosTCbWdhaEhYdlhTIeZDgKa2cCltI7htYETpy51XIIbl/aGUDgTTqcEWYkYtrDxJG/uyksSRIwFiQoBiJxZCDBEdfKuUogyS4iiT4NKcSIWmAUUACPjilNyCBdFVCcg9Y85uvSnho5UF5f1tyyM9S+Mpa44IXWG8E6kywB4PtkahsQPKlIrd9AZRJ1puhVHH9fpzCB3RhqUp6cSalA23ITVPdckgRVEkCvUBxp9VjfPUBSyuUFqUqCuUpNTrzYzCks/8XyoXOXgXEOkqVfzmQCRFKpUFCbioHEjLkIKXRkVVbQvcNetzE1MpoUVBNxYgkpdJScCgpMtxKEQNJEeMwmx15a7Qnz4DOTk/57+BkqjQl79dVARJSowPpwFZobaHSSMr5J8+mzbQ2s/pEaQAJ1hlLLqguUY1FRSMzXZUritUekmLXy52LBHrE0hYEyZt3b34+PXnbdj8JJYXcZJDAhmJCbsME5vXZfNex8504zDtFmDfGtlEGXD00dOUKSCAPwfpkPkerZnm1mmVUq5SMnq3UrOED9xZTamdNWlQ+kGtPmtz4wDvtpI5f0JO4W/wRtSjkJC6yDV1VK3F+cw0SanQKV0X3aXaxu5NYY1UESKBEzjKJ/NdgLSIJWwk9nqfepD2in3j/2tnufIcKDpyzDf307u0JZjXqQGl+kppyEutq8G1b5tUgrLfMiK6ysbzuTp6/M/RNwe+dEcj+4YNxJTKI3/5ZMsKngryLglb9Ttuh8/JuWw6Nef3hZhn9JqC7ZXH9XnhLqVpvld6Ir7lKc9FlEsEIjPwH5pjSaxPTqsAUhOEcFxe3y3VV9Od5ICe9jXWmVhmxpozMBcuQW/MJYlGYrwyg8uT8PnNkzNr0u8lHPRN3npzAKuSkQ9+DvHzpTGU9P/2Jaa40eXHUdaA/5tWdnkebBWExi0JnnMiVD8bFTtu1S5yfH1mLuDm6as5OTvkcrPGhRD0QFhK4pDCdvWY9inbU9Vy3wwd3fPitmr2+vHag94QI9BjmtkClGW1s6aaXhHuoz2A0xpl9QwqQ0EUGCYmx8ND1BDs1zQo93bmibXm5U3fWi0x5bt4MkjUWnp4p6WjRj4Jj8WSyfgf1Z9oO47zXS4jj5lUJXzhfn4U0Hv8/juxF4/ZZXPubwI+jet1EfRbe/n6wh/ewV//Xk+m/LoffQTVop96OIQ1ojYWWLxr5cPlt+o3zNCUbRi6TiwBXtZvGlxdL7qqnqn+g8jH6N+E0TWexNJ9Jt+0OXeB3Bti2/wLAEygR
+sidebar_class_name: "get api-method"
+info_path: EdgeHub/APIs/edgehub-restful-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get statistical data of parameter (analog data type)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/parameter/statistic/analog/{op}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieve statistical data for analog-type parameters
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"op","in":"path","required":true,"schema":{"type":"string","enum":["avg","sum"]},"description":"Operation, supports avg and sum"},{"name":"id","in":"query","required":true,"schema":{"type":"string"},"description":"Parameter ID"},{"name":"startTime","in":"query","required":true,"schema":{"type":"integer"},"description":"Start time as a Unix timestamp in milliseconds"},{"name":"endTime","in":"query","required":true,"schema":{"type":"integer"},"description":"End time as a Unix timestamp in milliseconds"},{"name":"precise","in":"query","required":true,"schema":{"type":"string","enum":["min","hour","day","month","year"]},"description":"Precision level, supports min, hour, day, month, year"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful","content":{"application/json":{"schema":{"type":"object","properties":{"value":{"type":"number","description":"Statistical value","example":16190.5}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

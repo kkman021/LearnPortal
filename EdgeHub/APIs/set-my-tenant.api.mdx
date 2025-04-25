@@ -1,0 +1,72 @@
+---
+id: set-my-tenant
+title: "Set my tenant"
+description: "Set the tenant for the current user"
+sidebar_label: "Set my tenant"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVduO2zYQ/RVinhpAvsBtetFbstlk3Tbt1vYmSDd+GEsji1mJVHjxRhD078WQku31okWfTJFnhjPDc447yMlmRjZOagUprMkJV5JwpFA5UWgTPjNvDCknvCUDCVjKvJGuhfS+gx2hIfPKuxLS+22/TcDQV0/WvdZ5C2kXPqWhHFJnPCWQaeVIOT7Cpqlkhnz57IvlCjqwWUk18sq1DUEKeveFMgfJWaJ7iAUuc9gm0BjdkHGSbIgaT04ZrDNS7SG5aHYTm1y+EXrnUCrKRWF0HTqu9F4q8ep2CQnQN6ybihN9ePfBf/r4cj79+2r5w1+/LH6+wuJh/tP6DfR9Ak66gFqTe9/G5Ks4Cuh7BhiyjVY21rmYz/nnYv4+y8jawlchY02u1Dmk0GjLE2iQpwyzw2KG3pUze7opPIs5kLHhVbypIIXSucamsxk2clL63SSng8xIq8lOTjqFNdkGM+onXVZ568j0067U1vFJ/2xcr9GSuFv9fmTFdb6nG78bpnRAI3FXxeaOuWOLBfrKQQo18i3PMv8xogXHQZ/AUM/TaFIW0T6LvorYY+zYwUVwvqfvf3w5xfyAylFWTjNdP8t1M8b2PTN5JPqaORk7O6f7kWA8Z36AAIN0AEEyLN5qUyMX8evHDVcYKXpDmMcWhyzYyN+ohQQkl1LG4wRiL7B8e3t86X/jsW0ok0Ur1V48ljIrRx07LTAQK7CKlbY6afR6pPe5dv6L6lxgoQN+YPzIhNX1elP4amDE0ypHTGP0QeZkBZ7DhVSOTMEcwKrSj9wCu4091R44V+jhNP2sJuLOkhGsBFJu8BHefme0byyv3mNWSkVWfBddxL7g3Vs0WJMjEzArwmriZE1CG1FK67SRGVaiGVEiR4efFXOcjI3dLKZzHgTrskY1Un5w0LodBn85hO5kfv/TagdqOPrmZk2FUvGtQdzd4Ab3cFhAAjyF4AEnR9hGLTCk63Zo6c5Ufc/bXz0Zdu/tSbbBvJORdWwhD9SyumLBkw0XwvDKR65eODfL5WhXt3+uN8z+4R+g1jnHGHxkF8dHSAES0GEoQVRhr4MK1d7jnrExJ7MVn0rtQlqh0lE/qj2rsOsiYqMfSPVsZ7Ehx9/Qb/u+/wfiImjj
+sidebar_class_name: "post api-method"
+info_path: EdgeHub/APIs/edgehub-restful-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Set my tenant"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v2/auth/setMyTenant"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Set the tenant for the current user
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["tenantId"],"properties":{"tenantId":{"type":"string","description":"Tenant ID obtained from the login API","example":"VGVuYW50.ZCI4Q928Cafk07SD"}},"title":"SetMyTenantRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful"}}}
+>
+  
+</StatusCodes>
+
+
+      

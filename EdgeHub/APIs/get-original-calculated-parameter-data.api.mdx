@@ -1,0 +1,64 @@
+---
+id: get-original-calculated-parameter-data
+title: "Get original calculated parameter data"
+description: "Retrieve the original calculated data of a parameter"
+sidebar_label: "Get original calculated parameter data"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVU1v20YQ/SuLObUAZRkO2gNvbmJbatPWsGT04OgwWg7FTZa7zO6QsUDwvwfDD8mSAhTISaPdN187bx5byCjqYCo23kEKT8TBUEOKC1I+mJ1xaJVGq2uLTJnKkFH5XKGqMGBJTAESiKTrYHgP6UsLW8JA4bbmAtKXTZe0wOTQ8YIwo9CfbRIIFCvvIkVIW7i5vpaf01pWtdYUY15bSEB7x+RYUFhV1mgU1PxzFGgLURdUoli8rwhS8NvPpBkSqIKvKLAZEkn5lTeO4xsshoB7SM7Sf5BOpyvDVP7I5fzc1eWWAnRdl0BuyGYfTeT/TXUvSGUFehkycjBuBwnQK5aVJUhfoMTXBm1NkEBp3GRajDzZ2OwmU3pmU4r5tUYrY9r0BbJhCQf/jnN+fxiz9P40DkiaEXRJXPgMUthR/64o84V5czM/MGG+WK7mE2vm+iRcz5LQUIg9SepgIYWCuYrpfI6VmRX1dpZRYzR5N9uaWeuwpFihpm7WaltHptBdtYWPLDfdxSv+gZHU89NHlfvQ8/cu29Gi3qrbxyUk0GAwuLUDDw6xB9rlWFuGFEqMA6FPI/8zoZX4QZfAWM+pN7mIGC+83w/Yg+/UwZlztqN3v/92hVmDjkkXV9qXF7EWk2/XyRJNe7cS+g+dvd2+A4fknWUAPQzSEQTJaNz7UKIU8ed/a6nwdF+P5K3MX9SzXkophusEhl5gef+47v0uih6O1fKDihVpk++N26lvhdGFGjIp9gr7ZQdhmnG579OO/Jzm+HS3Wue1Hed5mmPCVME3JqOo8C1cGccUcpkgWuu/SQF1pBCPmXvG5H68TT+5mXqOFBTWXJDjUXDk+CH4uopi/Y26MI6i+mWQm/irnD5O69BjngjtTNZP+aAKE9kHo9Ee5bOX1E9OGEohDt3cXF3LHCofuUQ3ERZSeCD+oSyfRjt/nfYonz+r8CMFmF55Xlk0Turrl7gdpeAFmpteF45Oi+UKEpiSiIqfSsJmWAbxbdstRnoOtuvk+GtNQb4mm+PeDh+TiXaiIV9oDyncak0V9wsuepdefh9kUw7q9XC3Fnk83Y+zfeijT6R3+zex23ZArP0Xcp1o0FAEy3/oRFe/A7TQjAw=
+sidebar_class_name: "get api-method"
+info_path: EdgeHub/APIs/edgehub-restful-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get original calculated parameter data"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/parameter/HIS/original/calculatedData"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieve the original calculated data of a parameter
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful","content":{"application/json":{"schema":{"type":"object","properties":{"datapoints":{"type":"array","description":"Data array","items":{"type":"array","items":{"type":"number"}}},"fieldList":{"type":"array","description":"Field list","items":{"type":"string","example":["maxvalue","minvalue","lastvalue","avgvalue","datatime","quality"]}}},"title":"OriginalCalculatedDataResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

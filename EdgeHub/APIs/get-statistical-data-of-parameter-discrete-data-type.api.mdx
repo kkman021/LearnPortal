@@ -1,0 +1,72 @@
+---
+id: get-statistical-data-of-parameter-discrete-data-type
+title: "Get statistical data of parameter (discrete data type)"
+description: "Retrieve statistical data for discrete-type parameters"
+sidebar_label: "Get statistical data of parameter (discrete data type)"
+hide_title: true
+hide_table_of_contents: true
+api: eJytV1lPHDkQ/itWPYHkYViiXa36jV0IsCeCQftAeKhx10w76bYdHxNGrf7vq+pjTkIChBfadh1f2V8dU0NOQXntorYGMrih6DUtSISIUYeoFZYix4hiZr3IdVCeIo3i0pFw6LGiSD6AhEAqeR2XkN3XMCX05E9TLCC7f2hkDZEMmnhJmJNv9x4kbOizksGKIAPrQIJmLA5jARI8fU7aUw5Z9IkkBFVQhZDVwCgggxC9NnOQQCZVkN1DSBU8NHIntH8deeRvKawplyIk56yPQbA4Y+wB6HwA8DmRX74AwZ7L6yFCcXW26SJE9HGiK3qxJ20izcnvu7plkyLqigQGgeLO6Md2GSJWTmgjKl2WOpCyJg+bYMjkPxbKuclfBYQpl8KPw3HWs1V0hsUCy0SbDp0npcPLI98jXKUNSChs8iAhRzZSWdOyd0nonyDjdetaWyNKWlAp12ystJGCTUmR41KK1pAUrR3OGk/BWRMoMKCT42P+t0OFpBSFMEslSFDWRDKRpdC5Uqs2BcYfA4vW+7HZ6UdSESQ4bx35qDtHyqbOyM6l78b1T6qm5IWdCatU8p6MosDLWAzvwPf2iJUrCbKffn3HV5O6xPwO+2e96LZJZtVAqG3rx033J6GiWNgcMphTGx4XlwzGi5Pxqg6NV0VvPFS6cW1d05Y3vxgKVfIlZFDE6EI2HqPToyJNRzkttCJrRlM9qplgwaGiZlSrMoVIvjmqCxsinzR7Yf2GgcTdzV9tleW4zvM5XaapOL2+AgkL9BqnZfcUK9vdy88wlREyqJC97D/IIC1a0jcSejzb2mQCYtjT/r2TXekOEewo53N698vPR5gv0ERSxZGy1Z6ty0G3aZjHQ8O4ZQZ2kW22jRUT+J6hT0Jed0Ig+4/31lfIIP74b8IItxvNygo6/Scth0wvumM5FIKr99eTVm8PdLctrs5EcKT0bKnNXHwptCpE50lEK7DNN2CWaTOzrVsdmYEwvOPN+e1klsr+PXfqZS/jvF3onLhobogLTgU/4xfEsrRfGEAK5MPac8uYme1Psw9mJO4CeYEpFmRin/O8feFtcoG//kZVaENBHHQZHw55d9WwWpkbwnLUVnLrRaFDtL6dB1YJ004GH7j2cXJ00ZwcHfM7OBtihWYgLGRwQXF/qrCzDWsHQ9Z1Z/x0h7u3Va8r2uuHlZ4UkR7j2JWoDSNu07ruC8M9LE5gY0RhBg5OGFJvGyRk1sFDlxmsVtdTDHTny6bh7a6ncNXIdeAUziGbYRnombAObvoGdCi2Boiv4P5Ey2Fq6TpcBm2Te5XDF44Rz0LanHLejuxFU8WzuNYDz9tRPT1jfOtaui74du+vmyKeRbeeidbwHtYd6PVUfnb8/gqkoXib5SaeAap10PBkVQy/Kur+4FQpcnFDZW/y4ZBWA8HF+QQk4Hbb2WkzrfUn4dR1JzGxn8g0zQpd5DUDbJr/Ac70osE=
+sidebar_class_name: "get api-method"
+info_path: EdgeHub/APIs/edgehub-restful-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get statistical data of parameter (discrete data type)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/parameter/statistic/discrete/{op}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieve statistical data for discrete-type parameters
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"op","in":"path","required":true,"schema":{"type":"string","enum":["sum"]},"description":"Operation, only supports sum"},{"name":"id","in":"query","required":true,"schema":{"type":"string"},"description":"Parameter ID"},{"name":"startTime","in":"query","required":true,"schema":{"type":"integer"},"description":"Start time as a Unix timestamp in milliseconds"},{"name":"endTime","in":"query","required":true,"schema":{"type":"integer"},"description":"End time as a Unix timestamp in milliseconds"},{"name":"status","in":"query","required":true,"schema":{"type":"integer"},"description":"Discrete status value"},{"name":"precise","in":"query","required":true,"schema":{"type":"string","enum":["min","hour","day","month","year"]},"description":"Precision level, supports min, hour, day, month, year"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful","content":{"application/json":{"schema":{"type":"object","properties":{"count":{"type":"integer","description":"Number of occurrences of the status","example":183},"duration":{"type":"integer","description":"Duration of the status in seconds","example":1830}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

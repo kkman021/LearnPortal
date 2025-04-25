@@ -1,0 +1,72 @@
+---
+id: set-parameter-data
+title: "Set parameter data"
+description: "Set the data for parameters"
+sidebar_label: "Set parameter data"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVstu2zgU/RXirlpAjh0XMwsBWaST53QyCfxoMU29uJauLbYSqZKUU0HQvxeXlPyI22QzXtgSed8859ANpGQTI0sntYIYpuSEy0ik6FCstBElGizIkbEQgaWkMtLVED82sCQ0ZM4rl0H8uGijBhwpVO6GMCXj1xYRGPpekXXvdVpD3PhXaSiF2JmKIki0cqQcb2FZ5jJBLmT41XI1DdgkowL5ydUlQQx6+ZUSBxGURpdknCTLu77Kj5hXtGeLxmANEUhHhX09hkz3bKwzUq0hejaeh34a4vYCIqAfWJQ528+vr+r/Pp3m6fXH+uRu+nk2nY+e7i4uoY1g09elFd2v/Oy6LKoqlmTAz+4gL0/ud5l9uEikVJJKpVoLrcJx+RB7RZ2ORm3UBd4mkMrRmsxRZ7O6JPHm9AwV5nodifFZKm1iyFEk3p05+uHeHsRu+ROBk873PyW3rfACHU7CsUOwMmRLrWyY83g04p9nuKuShKxdVTn8b6DgobxuVZC1uKZfnf3ueO8/gG8kR0cqqV82Ho9GorDw8njCQKAbY0Eu0ynEUGrrS0RmFQw34+GWgMPJbOhbYh6aDTOSoVSZHGLInCttPBxiKQdZtRyktJEJaTVYykGjsCBbYkLtoEnyyjoy7UmTaet4pz3Cwnu0JOaTf7wAsBpcpmu6qZbi/OEWGM9G4jIP49vGDme6wip3EEOBnOUo8r+9tWA/JkdXz6E3KYtoj7z/CrZb376DZ87pmt79+ccJphtUjpLsJNHFUayb3rdtmWy9sk0ZW6GzfX3bHjfPmQ/Am0HcGUHUPVxpUyAX8fenGVd4qIg7ZSrlB/LSxKVkYTuC0AvcXj3MvN8xSf2yuL0QtqRErmqm/1Mmk0yETMJpgZ5JHn7MmMlOgC97iB4K5mPQvt9r2FbCRr2cnLaLlqtfad9Vh/IeJpPL6WxV5R1cDlvobUqjNzIlK3DfXLA8mRUDBPNcP3F/lSVjd415QK50txt/UQMxt2QEVi4j5Tqx4OVro6vS8tMdJplUZMWbIAL2La9uGeltJoT5wMmChDYik9ZpIxPMdxegF9kviqdBxoZuxicjPmZmbYGq50N3jx56Pp9Es5O5V27dDjSswcMyR6k4pad90wnFI2zGXjU6L4hgMuOEnHcRiMJWTbNES3OTty0vf6/I8F2+2HE6XOU9JBka36hm6oVaB7Nwx3R4OJZnvsqCx3mSUOletF3sCd/D/ZQrXnb/Ewqdso/BJ4j8dwwQgfaz8+z0aw3kqNaVl28IMRn2eMjZZxzdv4BR1XsVNk2wmOlvpFrWxdCK43doF23b/gQJEyl8
+sidebar_class_name: "post api-method"
+info_path: EdgeHub/APIs/edgehub-restful-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Set parameter data"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v2/parameter/RT/data"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Set the data for parameters
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"paramValue":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","description":"Parameter ID","example":"UGFyYW1ldGVy.MSZTSU0wMDE"},"value":{"oneOf":[{"type":"number"},{"type":"string"}],"description":"Parameter value, depending on data type","example":100},"type":{"type":"integer","description":"Type (1=analog, 2=discrete, 3=text)","example":1}}}}},"title":"SetParameterDataRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful","content":{"application/json":{"schema":{"type":"object","properties":{"data":{"type":"object","properties":{"message":{"type":"string","example":"OK"}}},"latency":{"type":"string","example":"200 ms"}},"title":"SetParameterDataResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

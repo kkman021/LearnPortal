@@ -1,0 +1,72 @@
+---
+id: get-auto-scaled-parameter-data
+title: "Get auto-scaled parameter data"
+description: "Retrieve auto-scaled or fixed-scaled parameter data"
+sidebar_label: "Get auto-scaled parameter data"
+hide_title: true
+hide_table_of_contents: true
+api: eJytV0tv4zYQ/ivEnHYBOg5StAfdtk02cdsUQeygh6wPY2lscVciFZLS2hD03xdDPezYiVsnm0ssah7fDOfxqYaEXGxV4ZXREME9eauoIoGlNyMXY0aJMFYs1ZqS/rlAizl5siJBjyDBUVxa5TcQPdawILRkP5U+hehx3sgaPGnU/oYwIRvO5hIGGy4oacwJIsjJpyYBCYrBFOhTkGDpqVSWEoi8LUmCi1PKEaIa/KZgLeet0iuQQLrMIXoEBj9lrCAhIG8f5o3cC/c2+JPC6GwjXFkUxnonBvUh8lafY+mAqgHkU0l2cwLKAwx3QzYnl7sunEfrZyqnkz0p7WlF9tDVlE0Kr3IS6ASKB63W4dF5zAuhtMhVlilHsdGJ2wVDOvm5UK508iYgXHEztv3G9G+LJMc1SMiVBglY8ZsMnX+hSC7Ro2Ar+3WS41qKXGkpsFpJEdR3oOa4vjNKe/fzsnaLa5WXudBlviArzFIUrYfd0tSebIXZ+zPkKB4ylJrSgoQE2VRudOjMDaF9IWGTDoHcpspR3KWKDUmR4EaKYEaKYIVngiVXGO3IMaiL83P+t1fAZRyTc8uSo4uN9qQ9S2FRZCpGlhp/dSxaH8ZnFl8p9iChsKYg61XriCuqy+JWFq0Nkb5QCeGVeKwwK0mKpxIz5TcyjMJtCc85+57yl2zun7eXCU3TyO3lHRbDPhjuR9HLv9AyoGntGfF/hjVVepWRYPk2jJCOY0g5h1QpU7pTHPQ6/9NJ+yf7pRDBisLt8VaIYFxdjIclMr6ZTMd1K9iMh61kq36/lDaDCFLvCxeNx1ioUVouRglVKiajRws1qrl9XIExNaM6zkrnyTZndWqc5zfNQVC/oyPxcP+3WBorfEriKlnRTbkQn+4mIKFCq3CRtTU22G5Leoll5sOEYC8Hlv/ppUVo6UZCh+e5NmmH6A60/2hlB90+gj3lZEW//PbrGSYVak9xehab/MDWTa/bNNyg/Z6fcmu1ke1u++EKOc/QTRh+boVAdj8+G5sjg/jz3xkjfM4PtrVUqL9o04+xtH0t+zE3+Xw3C3qHjRGOxeRSuIJitdwovRLfUxWnovUkvBEYBgm0Pbc0wa3yGVvu7/H+ajpblll3n3vrq5MprKlUQrzDdsTbtlzyDWKWme8MoHRk3dZzqJil6d5GX/RIPDiyzD1S0r4bZnx8bU1ZOP51i3GqNDnxoR1l7iOfDvwhyNwTZqOwWI0VqXLeWBVjtsfZvvBI5+Zoo7k4O+d7KIzzOeq+YCGCa/LPmOAB83uWlXo7kt9IJLub97T24yJDpRlW6N266/tHqC5ghz6ChJvJFCREA3cMtuZt4bNCXS/Q0YPNmoaP233IQyFRjjs0gWiJmaMj0Xy475bnR/GMrr2C+Btteo4Y1gREEDb0mxyeSNqOQtrllO9HdhKHO4prSy/fj+okunYU1Q7XfD+sV6nbUQi7HPL9GN5CzI6X+JZrbtHNt8vv7W122pfZKyD7RaI3uwCH3LYDo2ECm/Yfp3X38lMcU+F31A4oJsc5UJPrqxl/Rjxfg3trL1h/EVJdtxIz84100wwIPT8zwKb5Ab2mZvM=
+sidebar_class_name: "get api-method"
+info_path: EdgeHub/APIs/edgehub-restful-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get auto-scaled parameter data"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/parameter/HIS/{method}/data"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieve auto-scaled or fixed-scaled parameter data
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"method","in":"path","required":true,"schema":{"type":"string","enum":["autoScale","fixedScale"]},"description":"Method, only supports autoScale or fixedScale"},{"name":"id","in":"query","required":true,"schema":{"type":"string"},"description":"Parameter ID"},{"name":"startTime","in":"query","required":true,"schema":{"type":"integer"},"description":"Start time as a Unix timestamp in milliseconds"},{"name":"endTime","in":"query","required":true,"schema":{"type":"integer"},"description":"End time as a Unix timestamp in milliseconds"},{"name":"dataType","in":"query","required":true,"schema":{"type":"string","enum":["max","min","avg","last"]},"description":"Data type, only supports max, min, avg, last"},{"name":"maxPoints","in":"query","required":true,"schema":{"type":"integer"},"description":"Maximum number of points"},{"name":"interval","in":"query","required":true,"schema":{"type":"string","enum":["sec","min","hour","day","month","year"]},"description":"Interval, supports sec, min, hour, day, month, year"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful","content":{"application/json":{"schema":{"type":"object","properties":{"datapoints":{"type":"array","description":"Data array [value, quality, data timestamp]","items":{"type":"array","items":{"type":"number"}}},"interval":{"type":"integer","description":"Time interval in milliseconds"},"nextData":{"type":"array","description":"Single next data point","items":{"type":"number"}},"previousData":{"type":"array","description":"Single previous data point","items":{"type":"number"}}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

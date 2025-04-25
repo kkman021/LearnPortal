@@ -1,0 +1,72 @@
+---
+id: login
+title: "Login"
+description: "Login using SSO credentials"
+sidebar_label: "Login"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVttSGzkQ/RWVnnarPLYhQJzJyxJCEpMLFOBkd4EHjabtUdBIE11sHNdU7SfsN+6XbLU0Y8aQLK5aXhhL3a3uo9NHvaI5WG5E5YRWNKUf9Ewo4q1QM3JxcUq4gRyUE0xa2qMGvnmw7pXOlzRdhZ/CQE5TZzz0KNfKgXK4xapKCs4w6uCrxdArankBJcMvt6yAplRnX4G7Jm4MdEW9BaNYCbRHK2btQpuc3vRoZXQFxgmwGGBtdB/MOiPUjPYeFIRFoDVhnGuvHBGKQMmEJFNtSoanwx0rKxlisP5XoWa/sXzOlANe9Lku+1zRupPM9keuXbpnsIznMJ1hSAvuSOtb0S0j01oCU4+CnoYPJvtkPCUWHHGaBNSJK4DwEIYshJQkA7IwwjlQwaYAkhm9sGC6aaBrXfeoEy5kFe79PF4vrWvcMmArrWwEfHc4xH8PCvWcg7VTL+n/uPzNm5XMgeLLp1E+PBuTbx7MkjQueLOlkFJY4FrldgP10U5pEfKcuS2ScPoW1GUweSqNSzQlaNMj3BsDyskl0UouifVVpY2z5Jq+AmbAXNONnOIiZsUCjiHUdoVHB+Li4ZoIxaXPASHACz/0rtBGfA9XQApgORjkO7E+s3jJypGmlzdhguVJkb3l4lScjCffJ3cfxdiO1fk+PxofjG+r3z8fnbzo9/uYM9xVwoAddzMWysEsEO1HIAWPmJITJRBmCSMTJe7CT+tYWb1sShKWzJkUeUh6hxTab7B352A0Gu7uPRs+CzydGrDFtuiRV8zCwd4/f/0NiuscchItsWVzxLKJF4AM2WwSKTsY7Y1ePE92DvaeJzs7AMlolOXJkO2Phiyf7g3zDOFBAdiCaKCYcrZjyIxhy8cABjsiVBQthBCRwRSlns0gT4JqB+iFg9I+fbTYQsmaY8evX64Z5gphW5p1iIV9lRjAVswJMvSH9Pr89rP/48v+sP/na3DJrvhWsPmnyfFhUMPt9LxJqXkhutLtWumqo349kLYoZrTZLMEVOqcprbQN2DBX0JQO5rsD5l0xkOhEUaLNHIyl6dWKeiNpSgvnKpsOBqwSSeGzJIe54KBVkolkhWnZinGokxWX3jowdX9VaOtwp35UDXKRTM4/rG/zOJ/BO58hhLRH58wIlsl4YevYUYinzEtHU1oyPOVR5E+tdYSq7tEmn01vUJYx+8j7KNqufdsKHjjnM3h2sN/feC4fxXrX+tZ1fYOIcm+EWwZIsyCBKFc0vbqpe21HvAvMCmsdlwt8QyIYXcc1ZfBq8M6CGb6lUWB7zceb+OCn9OTLJRa1edR9B1biPWALCsw+cpy29KTjN2eRgj9vFmIr4GK6RFFZFIIXJJ6E4hKFmyIF8WU8vx+ojlsqd6ebn08k3YFkPVNsjBThiccqpjpU17RDy7Dz44vLqZcN0zZLaW0qo+ciB9TpjjlBmTdT5BaTUi8a8TT2vsDA5aludtNrlZBJGMK8K3CcjMMBLr812lcWvz4yXggFlvwSFcv+iqtnzLASHJhgcw5MJuHx0IYUwjptBGeSVK1VEKJrhAfbNlaz2x+GAU5bVzLVtlKrDA+LX91PMk9Mww1fHNy5QSWZCGNiEIlVoydXdL5LexSrpj0aNeUmdhNurlYZszAxsq5xOUwzyPn7xo9d0ZIQO+YWltifMcUkzChoLn2k7oPBCzsqehxyDpX7T9ubjiyenV5cYuM0k36pc/QxbIHTOlvQFEcZHSAL/RjWcHpTM89maBtj4t+/BZJMVg==
+sidebar_class_name: "post api-method"
+info_path: EdgeHub/APIs/edgehub-restful-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Login"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v2/auth/login"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Login using SSO credentials
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["username","password"],"properties":{"username":{"type":"string","description":"SSO user account in email format","example":"sa.jing@advantech.com.cn"},"password":{"type":"string","description":"SSO user password","example":"abcdefg"},"setCookie":{"type":"boolean","description":"Optional. If set to true, the cookie will be written to the browser","example":true}},"title":"LoginRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful","content":{"application/json":{"schema":{"type":"object","properties":{"latency":{"type":"string","description":"API query latency in milliseconds","example":"81ms"},"data":{"type":"object","properties":{"tokenType":{"type":"string","description":"Token type, currently only supports \"Bearer\"","example":"Bearer"},"accessToken":{"type":"string","description":"API access token to include in the Authorization header for subsequent requests","example":"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9..."},"expiresIn":{"type":"integer","description":"Token expiration time as a Unix timestamp; token is valid for 1 hour","example":1688024303},"refreshToken":{"type":"string","description":"A Base64‐encoded string used to refresh the token","example":"8b684897-1647-11ee-88bd-0a580adf40db"},"user":{"type":"object","properties":{"tenants":{"type":"array","description":"Tenant information for the logged-in user","items":{"type":"object","properties":{"id":{"type":"string","description":"Tenant ID; include this in the header for data-related API requests","example":"VGVuYW50.ZDet-2iqhavNUEAg"},"name":{"type":"string","description":"Tenant name","example":"satest"}}}}}}}}},"title":"LoginResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,72 @@
+---
+id: refresh-token
+title: "Refresh token"
+description: "Get a new access token using a refresh token"
+sidebar_label: "Refresh token"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVttu4zYQ/RVinlpAviVxkFWfkjSbOO12A8duCyR5oMmRxY1EaknKidcQ0E/oN/ZLiiHlW4Ltpti8RB7NcGYOz5nRCiQ6YVXlldGQwiV6xpnGJ8aFQOeYN4+oWe2UnjPOLGYWXR6tkIDFzzU6f2bkEtJV+KksSki9rTEBYbRH7ekVr6pCCU5pep8c5VqBEzmWnJ78skJIwcw+ofDtufGgO4i5HhKorKnQeoUuhATzNtZ5q/QckhcNnbIz7vD46J+//kYtjETJoiczM8+VRskya0rmc2T30PY3obPvgWUKC8lMFt4WZq40O70ZQQL4zMuqoLQHfZkNBfY7g+MhdgYDxM7JyUx2+nx40ucyO+rLGTRNAl75EDDeSTGO8EHTkIdFVxntYnsH/T7922/mtg6XktUFfAe4+zgW3KMWyzcgeTNin2u0S9aGMKVZqYpCORRGS7eHy7vSQZOA5P4NNYS7nASXb1URcGPkkzBRW4vaF0tmdLFkrq4qY71j93CG3KK9h72SopGqityevJFBN6N9MXjDlBZFLZEQIGqc1j43Vn0JN8By5BIty4xlrp45umPtWSuVfZRweZ3PLoX6qK5H0y/T5w9q5EZ6PBTno+PRY/Xn7+fX77rdLtWMz5Wy6Ea7FSvtcY72KyCFiFiSVyUy7hhnU62ew0/neVn91LakHFvwQslQ9IDlpra7dQ6OT076h0f94SDQdEvg79Ff7VASlpuZkuNmrmwROpT8GAdZ9g19fV1hUVPBpUmgRJ8bCSlUxgUecp9DCr3FQY/XPu/tNZeAQ7tA6yC9W0FtC0gh975yaa/HK9XJ61lH4kIJNLozU52V5iW6igtsOitR1M6jbbqr3DhPb5pX4BA0bDr+NcBO/V/IOV7Vs3bKLLhVfFZEjWzOjmMh43XhIYWSU5ZXJ/+29mYUR/xp69mPRu04d6+iz6PvJnbdwYtgOcfD42GXywXXHkXeFaZ8ddbVOrZpmgdCVNRW+WWAdBYUSeqB9O6hSVbgUXPtr4KCgm0n5JYmWgRjN3DDQLoaurPgBmnrBEn78N7YklPd139MqKn9VJtTeKV+wSUkoKj6qGVIILYPo/c3kxD3WnPBzEY/M1ehUNmSOP6UK5GzmIm4HudI2Ac0p8fb9XmxZvxms71xtVChmQlxLf/XJBpf3E6yumjJtF/t2qeyZqEk0mTYcWc0WGxG9OFFYZ5auVq37SHQNTPt2/Red9jUoWWkItS+3UZkvrSmrhw9feAiVxod+yHuAfcjWW+45SV6tMFnjLzohHFlLMuV88YqwQtWrb0YrZR7EicpM3Zz0O0TEKTpkuu1WrajYDNX9kBYbVfo//3uabni8dn3qoIrTenDgFi1I+UOFgeQAMEBL2bmQxQU+axWM+5waoumIXNYr0T7rfajMNY8JNE84pIkGkvvhK1J7kUd2fviS4BEFSNOhcDK/6fvw86AvPl4OyHttJ92pZEUY/kTtcOfIKXlagKUQZLBRp8Tel7zOfnGM+nvXwUUl+o=
+sidebar_class_name: "post api-method"
+info_path: EdgeHub/APIs/edgehub-restful-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Refresh token"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v2/auth/refreshToken"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a new access token using a refresh token
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["token"],"properties":{"token":{"type":"string","description":"A Base64‐encoded string obtained from the \"refreshToken\" field of the login API","example":"20df5ce0-165e-11ee-88bd-0a580adf40db"}},"title":"RefreshTokenRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful","content":{"application/json":{"schema":{"type":"object","properties":{"latency":{"type":"string","description":"API query latency in milliseconds","example":"9ms"},"data":{"type":"object","properties":{"tokenType":{"type":"string","description":"Token type, currently only supports \"Bearer\"","example":"Bearer"},"accessToken":{"type":"string","description":"API access token to include in the Authorization header for subsequent requests","example":"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9..."},"expiresIn":{"type":"integer","description":"Token expiration time as a Unix timestamp; token is valid for 1 hour","example":1688034051},"refreshToken":{"type":"string","description":"A Base64‐encoded string used to refresh the token","example":"3da6e1ff-165e-11ee-88bd-0a580adf40db"}}}},"title":"RefreshTokenResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
