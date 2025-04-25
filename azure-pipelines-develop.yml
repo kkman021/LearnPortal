@@ -14,7 +14,7 @@ variables:
   - name: dockerRegistryServiceConnection
     value: 'Edge COA Harbor' 
   - name: imageRepository
-    value: 'edge-coa/learn-portal'
+    value: 'edge-coa/learn-portal-develop'
   - name: containerRegistry
     value: 'advantechedgeai.azurecr.io'
   - name: containerRegistry
@@ -65,7 +65,7 @@ stages:
     steps:
     - script: |
         docker pull $(containerRegistry)/$(imageRepository):latest
-        docker stop learn-portal
-        docker run -itd --rm --name learn-portal -p 8090:80 $(containerRegistry)/$(imageRepository):latest
+        docker rm -f learn-portal-develop
+        docker run -itd --rm --name learn-portal-develop -p 8090:80 $(containerRegistry)/$(imageRepository):latest
       displayName: Deploy docker container
 
