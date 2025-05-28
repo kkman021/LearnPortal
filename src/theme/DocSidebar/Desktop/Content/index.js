@@ -36,7 +36,7 @@ export default function DocSidebarDesktopContent({path, sidebar, className}) {
         showAnnouncementBar && styles.menuWithAnnouncementBar,
         className,
       )}>
-      <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')}>
+      <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list', 'desktop__sidebar')}>
         <DocSidebarItems items={sidebar} activePath={path} level={1} />
       </ul>
     </nav>

@@ -2,10 +2,12 @@
 sidebar_label: 'Yocto 4.0'
 hide_title: true
 title: AOM-2721 BSP Image Yocto 4.0
+pagination_next: null
 tags: 
    - AOM-2721
    - NXP i.MX 8M Plus
    - BSP Image
+
 ---
 
 :::tip [Download The BSP Image Here](https://www.dropbox.com/scl/fo/tptbp080ohgckjdbr3vrq/AHI6QIyYpVQmGtIcHdtlRzs/officialbuild/risc_qcs_linux_yocto_00041.0/2024-11-17?rlkey=647rksjn60zyqj4i134tflsuj&e=2&subfolder_nav_tracking=1&dl=0)

@@ -2,6 +2,7 @@
 sidebar_label: 'Yocto 4.0'
 hide_title: true
 title: EPC-R3720 BSP Image Yocto 4.0
+pagination_next: null
 tags: 
    - EPC-R3720 
    - NXP i.MX 8M Plus

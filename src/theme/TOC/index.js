@@ -12,6 +12,7 @@ export default function TOC({className, ...props}) {
   
   return (
     <div className={clsx(styles.tableOfContents, 'thin-scrollbar', className)}>
+      <p className="table-of-contents__left-border px-4 py-2 text-xs font-bold text-gray-600">On this page ...</p>
       <TOCItems
         {...props}
         linkClassName={LINK_CLASS_NAME}

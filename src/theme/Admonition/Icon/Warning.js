@@ -1,0 +1,18 @@
+import React from "react";
+export default function AdmonitionIconCaution(props) {
+  return (
+    <svg
+      width="25"
+      height="24"
+      viewBox="0 0 25 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M11.7908 2.59376C12.1707 1.90299 13.1628 1.90299 13.5428 2.59376L22.8514 19.5186C23.2178 20.185 22.7359 21 21.9754 21H3.3582C2.59774 21 2.1151 20.1849 2.48124 19.5186L11.7908 2.59376ZM11.6668 16V18H13.6668V16H11.6668ZM11.6668 8.00001V14H13.6668V8.00001H11.6668Z"
+        fill="#FE9000"
+      />
+    </svg>
+  );
+}

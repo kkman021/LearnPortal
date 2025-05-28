@@ -1,35 +1,22 @@
-import React, { useEffect, useRef } from 'react';
 import {
-  useVersions,
   useActiveDocContext,
 } from '@docusaurus/plugin-content-docs/client';
-import { useLocation } from '@docusaurus/router';
 import styles from './styles.module.css';
 import Translate from '@docusaurus/Translate';
+import {useActivePlugin} from '@docusaurus/plugin-content-docs/client';
 
-export default function VersionDropdown({ pluginId }) {
-  // If no pluginId prop, infer from URL path
-  const { pathname } = useLocation();
-  const inferredId = pathname.startsWith('/') ? pathname.split('/')[1] : undefined;
-  const docPluginId = pluginId ?? inferredId ?? undefined;
+export default function VersionDropdown() {
+  const activePlugin = useActivePlugin();
+  const docPluginId = activePlugin?.pluginId;
+
   const selectId = `version-dropdown-${docPluginId ?? 'default'}`;
+  const versions = docPluginId === '' ? undefined : activePlugin?.pluginData?.versions;
 
-  const versions = useVersions(docPluginId);
-  const activeDocContext = useActiveDocContext(docPluginId);
-
-  const didLog = useRef(false);
-
-  useEffect(() => {
-    if (!didLog.current) {
-      //console.log(`Versions for pluginId "${docPluginId}":`, versions);
-      //console.log(`Active version for pluginId "${docPluginId}":`, activeDocContext.activeVersion);
-      didLog.current = true;
-    }
-  }, [docPluginId, versions, activeDocContext]);
-
-  if (!versions || versions.length <= 1) {
+  if (docPluginId === undefined || versions.length <= 1) {
     return null;
   }
+
+  const activeDocContext = useActiveDocContext(docPluginId);
 
   const handleChange = (e) => {
     const selected = e.target.value;

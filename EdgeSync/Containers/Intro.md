@@ -2,7 +2,7 @@
 sidebar_label: 'Architecture'
 title: 'Architecture'
 description: 'Learn about EdgeSync Container accelerator'
-sidebar_position: 5.0
+sidebar_position: 0
 hide_title: true
 pagination_label: EdgeSync Container Architecture
 ---
@@ -37,7 +37,7 @@ While standard containerization offers benefits, Advantech's Container Catalog p
 
 
 :::info  
-**[Advantech Container Catalog Website](https://dev-marketplace.advantech.com/en-us/containers?pageIndex=1)**
+**[Advantech Container Catalog Website](https://catalog.advantech.com)**
 provides a variety of application containers. you can visit the website to find the corresponding application for your requirements
 :::
 
@@ -60,13 +60,10 @@ graph TB
 Using traditional Docker development requires extensive setup:
 
 ```dockerfile
-FROM nvcr.io/nvidia/l4t-jetpack:r35.4.1
+FROM python:windowsservercore-1809
 
-# Highlights of required setup:
 # 1. Environment Variables
-ENV DEBIAN_FRONTEND=noninteractive \
-    NVIDIA_VISIBLE_DEVICES=all \
-    CUDA_HOME="/usr/local/cuda"
+ENV DEBIAN_FRONTEND=noninteractive 
 
 # 2. System Dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -90,7 +87,7 @@ CMD ["python3", "app/main.py"]
 With EdgeSync Container, development is simplified:
 
 ```dockerfile
-FROM edgesync.io/Vision/VideoDetech:1.0.0
+FROM edgesync.azurecr.io/advantech/x-edgesync-base-container:1.0.0-Ubuntu20.04-x86
 
 # Only application-specific setup needed
 COPY app/ /workspace/app/
@@ -118,13 +115,12 @@ Remember to handle sensitive data and credentials appropriately in your Dockerfi
 
 ### Building the Container
 ```bash
-docker build -t VisionAppV1 .
+docker build -t MyApp .
 ```
 
 ### Running the Container
 ```bash
 docker run -it --gpus all \
   --env DISPLAY=$DISPLAY \
-  --volume /tmp/.X11-unix:/tmp/.X11-unix \
-  VisionAppV1
+  MyApp
 ```

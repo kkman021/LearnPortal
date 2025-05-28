@@ -2,7 +2,7 @@
 title: 'EdgeSync Device Library Architecture'
 sidebar_label: 'Architecture'
 description: 'EdgeSync Device Library Architecture'
-sidebar_position: 4.1
+sidebar_position: 1
 hide_title: true
 pagination_label: EdgeSync Device Library Architecture
 ---
@@ -13,14 +13,9 @@ The EdgeSync Device Library provides a simplified hardware abstraction layer for
 ## Key Capabilities
 The library offers the following features:
 
-### Memory Information
-  - Retrieve total memory count and list available modules
-  - Query type, module type, size (GB), speed (MT/s), rank, voltage (V), bank, manufacturing date code, temperature (°C), write protection status, module/manufacturer details, part numbers, and specific metadata
-### Disk Information
-  - Get total and free disk space (MB)
 ### Platform Information
   - Access motherboard manufacturer, board name, BIOS revision, and SDK library version
-### Hardware Monitoring
+### Onboard Sensor Information
   - Enumerate voltage sources and read voltage values
   - Enumerate temperature sensors and read temperature values
   - List fan speed sources
@@ -28,6 +23,11 @@ The library offers the following features:
   - List GPIO pins
   - Get/set pin direction (input/output)
   - Get/set pin level (high/low)
+### Memory Information
+  - Retrieve total memory count and list available modules
+  - Query type, module type, size (GB), speed (MT/s), rank, voltage (V), bank, manufacturing date code, temperature (°C), write protection status, module/manufacturer details, part numbers, and specific metadata
+### Disk Information
+  - Get total and free disk space (MB)
 
 ## Hardware and Software Layer Relationship
 During the development phase, this approach effectively reduces complexity and simplifies debugging, allowing developers to focus on implementing and testing core functionalities.
@@ -61,6 +61,7 @@ E[Hardware Layer]
 
 ## Containerized Deployment Architecture
 In post-development scenarios, this setup enables consistent containerized environments, simplifying maintenance and updates for each application while ensuring reliable hardware interactions at scale.
+[Read a Use Case](../Containers/Sample/device)
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e6f2ff', 'primaryBorderColor': '#e6f2ff',  'secondaryColor': '#ffffff', 'tertiaryColor': '#f0f5ff', 'clusterBkg': '#ffffff', 'subGraphBkg': '#ffffff' }}}%%
 graph TB

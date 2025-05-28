@@ -2,7 +2,7 @@
 sidebar_label: 'Qualcomm'
 pagination_label: 'Qualcomm Introduction'
 title: Qualcomm Introduction
-sidebar_position: 3.1
+sidebar_position: 1
 tags:
   - Qualcomm
   - QNN SDK
@@ -117,7 +117,7 @@ Once QNN SDK and Python are verified, check TensorFlow Lite:
 
 When deploying AI models on Qualcomm devices, conversion is necessary to optimize performance and ensure compatibility with Qualcomm's Neural Processing Units (NPUs). This section explains why conversion is needed and provides step-by-step guidance for different conversion paths.
 
-### PyTorch => ONNX => Quantized TFLite Model
+### PyTorch Model → ONNX → Quantized TFLite Model
 Below is an Example, that can run on Qualcomm device with NPUs.
 
 The Qualcomm AI Hub library for optimization, profiling, and validation can be installed via PyPI. We recommend using Miniconda to manage your python versions and environments. To install, run the following command in your terminal. We recommend a Python version `>=` 3.8 and `<=` 3.10.
@@ -186,3 +186,7 @@ target_model.download(f"{model_name.replace('.onnx','')}.tflite")
 ## Additional Resources
 
 If you encounter any issues with environment verification or configuration, please refer to the [Qualcomm official documentation](https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/setup.html) for comprehensive setup instructions and troubleshooting guidance.
+
+:::note
+Qualcomm is a registered trademark of Qualcomm Corporation. This article is for educational purposes only and is not affiliated with or endorsed by Qualcomm Corporation.
+:::

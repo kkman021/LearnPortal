@@ -1,0 +1,57 @@
+---
+title: 'Installation'
+sidebar_label: 'Installation'
+description: 'Install and Configure the EdgeSync Device Library'
+sidebar_position: 2
+hide_title: true
+---
+
+import React from 'react';
+import FileSearch from '@site/src/components/FileSearch';
+import releases from '@site/src/data/SUSIData.json';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## Overview
+
+ * This section will cover how to install the EdgeSync Device Library for different programming languages.
+ * It will also explain the system information that can be controlled and retrieved using the EdgeSync Device Library.
+ * Detailed usage will be explained in the following sections.
+
+## Dependencies
+EdgeSync Device Library requires the following software dependencies. Please verify with your sales representative if your hardware supports them. In principle, they should be pre-installed on your system. If you need to reinstall them, please visit the website below:
+
+:::info Software dependencies
+
+[SUSI Install Guide](https://ess-wiki.advantech.com.tw/view/SUSI#Installation)
+
+<br/>
+
+<FileSearch data={releases} />
+:::
+
+
+## Get the library
+
+### Containers
+We provide base containers that allow users to operate in a containerized environment. You can search for these containers on the Advantech Container Catalog: [EdgeSync Base Container](https://catalog.advantech.com/en-us/containers?pageIndex=1&keyword=EdgeSync+Base+Container).
+
+For a better understanding of the containerized usage and development workflow experience, please refer to our [Use Cases](../Containers/Sample/device) article.
+
+### Python
+```bash
+pip install advantech-edge
+
+#or
+
+pip3 install advantech-edge
+```
+Require Python 3.8 aborve, View on [Advantech-Edge Pypi](https://pypi.org/project/advantech-edge/)
+
+### .Net C#
+```bash
+dotnet add package Advantech.Edge
+```
+
+Require .Net8 / .Net9, View on [Advantech.Edge NuGet](https://www.nuget.org/packages/Advantech.Edge)
+

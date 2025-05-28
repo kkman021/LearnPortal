@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+// * Mixin
+
+@mixin max-width($breakpoints) {
+  @media screen and (max-width: $breakpoints) {
+    @content;
+  }
+}
+
+@mixin min-width($breakpoints) {
+  @media screen and (min-width: $breakpoints) {
+    @content;
+  }
+}

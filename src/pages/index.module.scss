@@ -1,0 +1,13 @@
+@use '../css/utils.scss' as *;
+
+.banner {
+  background-image: url('/img/img_dev_banner_mobile.webp');
+
+  @include min-width(768px) {
+    background-image: url('/img/img_dev_banner_tablet.webp');
+  }
+
+  @include min-width(997px) {
+    background-image: url('/img/img_dev_banner_web.webp');
+  }
+}

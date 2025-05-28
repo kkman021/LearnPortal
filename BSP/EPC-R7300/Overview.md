@@ -2,7 +2,7 @@
 sidebar_label: 'Overview'
 hide_title: true
 title: EPC-R7300 Overview
-sidebar_position: 0
+pagination_prev: null
 tags: 
    - EPC-R7300 
 ---

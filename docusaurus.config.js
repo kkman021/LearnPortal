@@ -9,6 +9,8 @@ import { themes as prismThemes } from "prism-react-renderer";
 import path from "path";
 import fs from "fs";
 
+import tailwindPlugin from "./src/plugins/tailwind-config.cjs";
+
 const generateOpenApiPlugins = () => {
   const openapiDir = path.resolve(__dirname, 'src/api');
   const openapiFiles = fs.readdirSync(openapiDir).filter(file => file.endsWith('.yml'));
@@ -40,9 +42,9 @@ const generateOpenApiPlugins = () => {
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Advantech Learn Center",
-  tagline: "",
-  favicon: "img/favicon.ico",
+  title: "Advantech Learning Portal",
+  tagline: "AA",
+  favicon: "favicon.ico",
 
   // Set the production url of your site here
   url: 'http://localhost:3200/',
@@ -59,10 +61,10 @@ const config = {
         indexDocs: true,
         indexBlog: false,
         indexPages: false,
-        
+
         docsDir: ["EdgeSync", "BSP"],
         docsRouteBasePath: ["/EdgeSync", "/BSP"],
-        
+
         // For Docs using Chinese, it is recomended to set:
         // language: ["en", "zh"],
       }
@@ -73,7 +75,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "Advantech", // Usually your GitHub org/user name.
-  projectName: "LearnPortal", // Usually your repo name.
+  projectName: "LearningPortal", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -105,12 +107,12 @@ const config = {
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
-          blogTitle: 'Developer Portal Blog',
-          blogDescription: 'The latest news and updates from Advantech Developer Portal',
+          blogTitle: 'Learning Portal Blog',
+          blogDescription: 'The latest news and updates from Advantech Learning Portal',
           postsPerPage: 'ALL',
         },
         theme: {
-          customCss: "./src/css/custom.css",
+          customCss: ["./src/css/custom.scss"],
         },
       }),
     ],
@@ -140,10 +142,12 @@ const config = {
           },
         },
         navbar: {
-          title: '｜ Learn',
+          title: 'Learning Portal',
           logo: {
-            alt: "Advantech Learn Center",
-            src: "img/logo.svg",
+            alt: "Advantech Learning Portal",
+            src: "/img/logo.svg",
+            width: 100,
+            height: 20
           },
           items: [
             {
@@ -152,8 +156,8 @@ const config = {
                 {
                   type: 'doc',
                   docId: 'Overview',
-                  docsPluginId: 'BSP', 
-                  label: "BSP & Yocto", 
+                  docsPluginId: 'BSP',
+                  label: "BSP",
                 },
                 {
                   label: "Training",
@@ -162,47 +166,55 @@ const config = {
                 {
                   label: "Webinars",
                   to: "https://wise-iot.advantech.com/zh-tw/marketplace/webinars",
-                }
-              ],
-            },
-            {
-              label: "Product Documentation",
-              items: [
-                {
-                  type: 'doc',
-                  docId: 'Introduction',
-                  docsPluginId: 'EdgeSync', 
-                  label: "EdgeSync", 
                 },
                 {
-                  label: "iEMS",
-                  to: "https://wise-iot.advantech.com/zh-tw/marketplace/solutions/iems-solutions",
-                },
-                {
-                  label: "IoTSuite",
-                  to: "https://wise-iot.advantech.com/zh-tw/marketplace/solutions/wise-iotsuite",
-                },
-                {
-                  label: "iMachine",
-                  to: "https://wise-iot.advantech.com/zh-tw/marketplace/product/advantech.machineunite",
+                  label: "Container Catalog",
+                  to: "https://catalog.advantech.com/",
                 }
               ],
             },
             {
               type: 'dropdown',
-              label: 'API Reference',
+              label: 'Products',
               position: 'left',
               items: [
                 {
                   type: 'doc',
-                  docId: 'APIs/edgehub-restful-api',
-                  docsPluginId: 'EdgeHub', 
-                  label: "EdgeHub", 
+                  docId: 'Introduction',
+                  label: 'EdgeSync',
+                  docsPluginId: 'EdgeSync',
                 },
                 {
+                  type: 'doc',
+                  docId: 'Introduction',
+                  label: 'Agent Builder',
+                  docsPluginId: 'AgentBuilderUserManual',
+                },
+                {
+                  type: 'doc',
+                  docId: 'Introduction',
+                  label: 'EdgeHub',
+                  docsPluginId: 'EdgeHubUserManual',
+                },
+                {
+                  type: 'doc',
+                  docId: 'Introduction',
                   label: 'EdgeLink',
-                  to: 'https://docs.wise-paas.advantech.com/zh-tw/Guides_and_API_References/1571367409966112123/1574927875848110211/1659609863657254888/v2.0'
-                }        
+                  docsPluginId: 'EdgeLinkUserManual',
+                }
+              ],
+            },
+            {
+              type: 'dropdown',
+              label: 'API Hubs',
+              position: 'left',
+              items: [
+                {
+                  type: 'doc',
+                  docId: 'edgehub-restful-api',
+                  label: 'EdgeHub RESTful API',
+                  docsPluginId: 'EdgeHubAPIs',
+                }
               ],
             }
           ],
@@ -259,38 +271,15 @@ const config = {
             logoClass: "javascript",
           }
         ],
-        /* Remove Algolia search feature
-        algolia: {
-          // The application ID provided by Algolia
-          appId: 'F4LBX1QJGV',
-
-          // Public API key: it is safe to commit it
-          apiKey: '3e31d25b43f1cadb8e57c0c07ffe14cd',
-
-          indexName: 'edgesync',
-
-          // Optional: see doc section below
-          contextualSearch: true,
-
-          // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-          externalUrlRegex: 'external\\.com|domain\\.com',
-
-          // Optional: Algolia search parameters
-          searchParameters: {},
-
-          // Optional: path for search page that enabled by default (`false` to disable it)
-          searchPagePath: 'search',
-
-          // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
-          insights: false,
-
-          //... other Algolia params
-        },
-        */
       }),
 
   plugins: [
-    //generateOpenApiPlugins(),   
+    [
+      '@docusaurus/plugin-google-tag-manager',
+      {
+        containerId: 'XXXX'
+      },
+    ],
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -298,7 +287,6 @@ const config = {
         path: 'EdgeSync',
         routeBasePath: 'EdgeSync',
         sidebarPath: require.resolve('./src/sildebar/doc.js'),
-        // Make sure the plugin has the following settings
         includeCurrentVersion: true,
         lastVersion: 'current',
         versions: {
@@ -329,28 +317,70 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'EdgeHub',
-        path: 'EdgeHub',
+        id: 'EdgeHubUserManual',
+        path: 'EdgeHub/UserManual',
         routeBasePath: 'EdgeHub',
-        docItemComponent : '@theme/ApiItem',
-        sidebarPath: require.resolve('./src/sildebar/openApi.js'),
+        docItemComponent: '@theme/ApiItem',
+        sidebarPath: require.resolve('./src/sildebar/edgehub.js'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'EdgeLinkUserManual',
+        path: 'EdgeLink/UserManual',
+        routeBasePath: 'UserManual/EdgeLink',
+        docItemComponent: '@theme/ApiItem',
+        sidebarPath: require.resolve('./src/sildebar/edgelink.js'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'AgentBuilderUserManual',
+        path: 'AgentBuilder/UserManual',
+        routeBasePath: 'UserManual/AgentBuilder',
+        docItemComponent: '@theme/ApiItem',
+        sidebarPath: require.resolve('./src/sildebar/agentbuilder.js'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'EdgeHubAPIs',
+        path: 'EdgeHub/APIs',
+        routeBasePath: 'APIs/EdgeHub',
+        docItemComponent: '@theme/ApiItem',
+        sidebarPath: require.resolve('./src/sildebar/edgehub.js'),
       },
     ],
     [
       'docusaurus-plugin-openapi-docs',
       {
-        id: "edgehubapi",
+        id: "apis",
         docsPluginId: "classic",
         config: {
           edgesync: {
             specPath: "src/api/EdgeHub.yml",
             outputDir: "EdgeHub/APIs",
-            hideSendButton: true,
+            hideSendButton: false,
           }
         }
-      },
-    ]
+      }
+    ],
+    'docusaurus-plugin-sass',
+    tailwindPlugin
   ],
+
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap',
+      },
+    },
+  ]
 };
 
 export default config;

@@ -2,6 +2,7 @@
 sidebar_label: '7300A1AIM35UIV30021'
 hide_title: true
 title: EPC-R7300 BSP Image 7300A1AIM35UIV30021 (Ubuntu 20.04)
+pagination_next: null
 tags: 
    - EPC-R7300 
    - NVIDIA Orin
@@ -64,7 +65,9 @@ The device supports two methods to enter recovery mode:
 1. Open the back cover
 2. Connect the Micro USB cable to the Host PC
 3. Press the SW1 button and power on
+
    ![SW1 Button](../../assets/Recovert_Button.png)   
+
 4. Verify recovery mode by checking if **NVIDIA Corp** is detected:
    ```bash
    lsusb | grep "NVIDIA Corp"
