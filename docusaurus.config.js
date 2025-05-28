@@ -11,35 +11,6 @@ import fs from "fs";
 
 import tailwindPlugin from "./src/plugins/tailwind-config.cjs";
 
-const generateOpenApiPlugins = () => {
-  const openapiDir = path.resolve(__dirname, 'src/api');
-  const openapiFiles = fs.readdirSync(openapiDir).filter(file => file.endsWith('.yml'));
-
-  const config = openapiFiles.reduce((data, file) => {
-    const id = path.basename(file, '.yml');
-    data[id] = {
-      specPath: path.join(openapiDir, file),
-      outputDir: `${id}/APIs`,
-      sidebarOptions: {
-        sidebarPath: require.resolve('./src/sildebar/bsp.js'),
-      }
-    }
-    return data;
-  }, {});
-
-  const result = [
-    'docusaurus-plugin-openapi-docs',
-    {
-      id: 'api',
-      docsPluginId: 'classic',
-      config,
-    },
-  ];
-  return result;
-};
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Advantech Learning Portal",
@@ -98,19 +69,6 @@ const config = {
     [
       "classic",
       ({
-        docs: {
-          sidebarPath: false,
-          docItemComponent: "@theme/ApiItem",
-        },
-        blog: {
-          showReadingTime: true,
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-          blogTitle: 'Learning Portal Blog',
-          blogDescription: 'The latest news and updates from Advantech Learning Portal',
-          postsPerPage: 'ALL',
-        },
         theme: {
           customCss: ["./src/css/custom.scss"],
         },
@@ -134,12 +92,6 @@ const config = {
           disableSwitch: true,
           // 禁止跟隨系統設定
           respectPrefersColorScheme: false,
-        },
-        docs: {
-          sidebar: {
-            hideable: true,
-            autoCollapseCategories: true,
-          },
         },
         navbar: {
           title: 'Learning Portal',
