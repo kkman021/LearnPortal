@@ -9,7 +9,7 @@ const FeatureData = [
     },
   },
   {
-    title: 'AI Application',
+    title: 'AI Applications',
     text: 'Discover our Container Catalog — integrating Advantech\'s hardware acceleration to streamline AI development. Build and deploy intelligent solutions with optimized containers for maximum performance.',
     image: {
       web: '/img/img_ai_application_web.webp',
