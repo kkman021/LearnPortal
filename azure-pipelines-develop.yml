@@ -25,9 +25,9 @@ variables:
     ${{ else }}:
       value: '$(Build.BuildNumber)'
   - name: developerDomain
-    value: 'https://developer.edgesync.cloud'
+    value: 'https://developer.advantech.com'
   - name: learnDomain
-    value: 'https://learn.edgesync.cloud'
+    value: 'https://learn.advantech.com'
 stages:
 - stage: Build
   displayName: Build image
