@@ -7,7 +7,7 @@ title: 'EdgeHub Introduction'
 description: ''
 ---
 
-## What is EdgeHub?
+## What is EdgeHub!!!!!!!!!!!!!!!?
 
 EdgeHub, with intelligent connectivity at its core, provides comprehensive device management services for Advantech edge devices, enhancing IoT device operational efficiency across various application scenarios. In the industrial IoT market, EdgeHub serves as a unique specification for Advantech hardware, offering differentiated advantages. Through advanced device management capabilities, it helps customers achieve efficient device operations and maintenance.
 
